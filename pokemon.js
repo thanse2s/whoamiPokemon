@@ -1,6 +1,6 @@
-export const  test = "Testing";
+module.export const  test = "Testing";
 
-export const pokemon=[
+module.export const pokemon=[
     {
       "ID": 1,
       "Name": "Bulbasaur",
