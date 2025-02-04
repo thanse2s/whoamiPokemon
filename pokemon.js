@@ -1,6 +1,6 @@
-module.export test = "Testing";
+const test = "Testing";
 
-module.export pokemon=[
+const pokemon=[
     {
       "ID": 1,
       "Name": "Bulbasaur",
