@@ -1,6 +1,6 @@
 const test = "Testing";
 
-const pokemon=[
+export const pokemon=[
     {
       "ID": 1,
       "Name": "Bulbasaur",
