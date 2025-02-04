@@ -1,2 +1,2 @@
-import { test } from "./pokemon.js";
-console.log(test)
+import { pokemon } from "./pokemon.js";
+console.log(pokemon)
