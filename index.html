@@ -101,7 +101,7 @@
                 <div class="input-group mb-3">
                     <input type="number" class="form-control" placeholder=0.0 aria-label="min" id="min-weight">
                     <span class="input-group-text">-</span>
-                    <input type="number" class="form-control" placeholder=9 aria-label="max" id="max-weight">
+                    <input type="number" class="form-control" placeholder=100 aria-label="max" id="max-weight">
                 </div>
             </fieldset>
              <!--Größe-->
@@ -129,11 +129,34 @@
             <fieldset id="input_evo_typ">
                 <legend>Entwicklungs-Typ</legend>
                 Bei dieser Frage/Option wird die Methode angezeigt welche benötigt wird dieses Pokemon zu werden.
+                <div class="form-check form-check-inline">
+                     <!--LevelUp-->             
+                     <input type="checkbox" class="btn-check" id="btn-check-outlined-lvlup" autocomplete="off" checked>
+                     <label class="btn btn-outline-primary" for="btn-check-outlined-lvlup">LevelUp</label>
+                     <!--Tausch-->             
+                     <input type="checkbox" class="btn-check" id="btn-check-outlined-trade" autocomplete="off" checked>
+                     <label class="btn btn-outline-primary" for="btn-check-outlined-trade">Tausch</label>
+                     <!--Bewegung-->             
+                     <input type="checkbox" class="btn-check" id="btn-check-outlined-move" autocomplete="off" checked>
+                     <label class="btn btn-outline-primary" for="btn-check-outlined-move">Bewwgung</label>
+                     <!--Friendschip-->             
+                     <input type="checkbox" class="btn-check" id="btn-check-outlined-friendship" autocomplete="off" checked>
+                     <label class="btn btn-outline-primary" for="btn-check-outlined-friendship">Freundschfat</label>
+                     <!--Item-->             
+                     <input type="checkbox" class="btn-check" id="btn-check-outlined-item" autocomplete="off" checked>
+                     <label class="btn btn-outline-primary" for="btn-check-outlined-item">Item</label>
+
+
+                </div>
+                
             </fieldset>
              <!--Entwicklung-Item-->
             <fieldset id="input_evo_item">
                 <legend>Entwicklungs-Item</legend>
                 Bei dieser Frage/Option wird das Item angezeigt welches benötigt wird dieses Pokemon zu werden.
+                <div class="form-check form-check-inline">
+
+                </div>
             </fieldset>
             <fieldset id="input_form">
                 <legend>Form</legend>
@@ -151,4 +174,3 @@
    
     </body>
 </html>
-
