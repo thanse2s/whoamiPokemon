@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="./style.css" rel="stylesheet"></link>
     <head>
     <body>
         <script type="module" src="pokemon.js"></script>
@@ -33,6 +34,7 @@
                         <option>1</option>
                         <option>2</option>
                     </select>
+                    <br>
                     <br>
                     <div class="form-check form-check-inline">
                         <!--Fire-->             
@@ -96,11 +98,20 @@
              <!--Gewicht-->
             <fieldset id="input_weight">
                 <legend>Gewicht</legend>
-
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" placeholder=0.0 aria-label="min" id="min-weight">
+                    <span class="input-group-text">-</span>
+                    <input type="number" class="form-control" placeholder=9 aria-label="max" id="max-weight">
+                </div>
             </fieldset>
              <!--Größe-->
             <fieldset id="input_height">
                 <legend>Größe</legend>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" placeholder=0.0 aria-label="min" id="min-height">
+                    <span class="input-group-text">-</span>
+                    <input type="number" class="form-control" placeholder=9 aria-label="max" id="max-heightE">
+                </div>
             </fieldset>
             <!--Entwicklung-->
             <fieldset id="input_evo">
@@ -128,6 +139,7 @@
                 <legend>Form</legend>
             </fieldset>
         </div>
+        <button type="button" class="btn btn-success" id="start_filter">Filtern</button>
         <div id="tableBody">
 
         </div>
