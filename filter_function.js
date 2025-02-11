@@ -3,13 +3,16 @@ import { pokemon } from "./pokemon.js";
 
 //var tableBody = document.getElementById("tableBody");
 //FtableBody.innerHTML=pokemon
+// https://www.geeksforgeeks.org/how-to-create-an-html-table-from-an-object-array-using-javascript/
 
 function createStartTable(){
 
     const table = document.createElement('table');
-    table.setAttribute('border','1');
+    table.classList.add('table')
+    
 
     const headerRow = document.createElement('tr');
+    headerRow.classList.add('thead-dark')
     Object.keys(pokemon[0]).forEach(key=>{
         const th = document.createElement('th');
         th.appendChild(document.createTextNode(key));
