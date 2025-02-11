@@ -1,8 +1,8 @@
 import { pokemon } from "./pokemon.js";
-console.log(pokemon)
+//console.log(pokemon)
 
-var tableBody = document.getElementById("tableBody");
-tableBody.innerHTML=pokemon
+//var tableBody = document.getElementById("tableBody");
+//FtableBody.innerHTML=pokemon
 
 function createStartTable(){
 
