@@ -9,12 +9,10 @@ function createStartTable(){
 
     const table = document.createElement('table');
     table.classList.add('table')
-    table.classList.add('table-striped')
-    table.classList.add('table-dark')
+    table.classList.add('table-bordered')
     
 
-    const headerRow = document.createElement('tr');
-    headerRow.classList.add('thead-dark')
+    const headerRow = document.createElement('tr');    
     Object.keys(pokemon[0]).forEach(key=>{
         const th = document.createElement('th');
         th.appendChild(document.createTextNode(key));
