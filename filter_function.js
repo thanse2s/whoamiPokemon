@@ -4,22 +4,26 @@ import { pokemon } from "./pokemon.js";
 
 ///Filter Elemente
 //Gengre
-var sel_generation = document.getElementById("")
+var sel_generation = document.getElementById("select_gen")
 //Typ
-var typ_wather= document.getElementById("");
-var typ_fire=document.getElementById("");
-var typ_leaf=document.getElementById("");
-var typ_electro=document.getElementById("");
-var typ_dark=document.getElementById("");
-var fairy=document.getElementById("");
-var dragon=document.getElementById("");
-var ground=document.getElementById("");
-var stone=document.getElementById("");
-var flying=document.getElementById("");
-var bug=document.getElementById("");
-var ghost=document.getElementById("");
-var psi=document.getElementById("");
-var ice=document.getElementById("");
+var typ_wather= document.getElementById("btn-check-outlined-fire");
+var typ_fire=document.getElementById("btn-check-outlined-wather");
+var typ_leaf=document.getElementById("btn-check-outlined-leaf");
+var typ_electro=document.getElementById("btn-check-outlined-bug");
+var typ_dark=document.getElementById("btn-check-outlined-dark");
+var typ_fairy=document.getElementById("btn-check-outlined-dargon");
+var typ_dragon=document.getElementById("btn-check-outlined-electric");
+var typ_ground=document.getElementById("btn-check-outlined-fairy");
+var typ_stone=document.getElementById("btn-check-outlined-fighting");
+var typ_flying=document.getElementById("btn-check-outlined-flying");
+var typ_bug=document.getElementById("btn-check-outlined-ghost");
+var typ_ghost=document.getElementById("btn-check-outlined-ground");
+var typ_psi=document.getElementById("btn-check-outlined-ice");
+var typ_ice=document.getElementById("btn-check-outlined-normal");
+var typ_ice=document.getElementById("btn-check-outlined-poison");
+var typ_ice=document.getElementById("btn-check-outlined-psychic");
+var typ_ice=document.getElementById("btn-check-outlined-rock");
+var typ_ice=document.getElementById("btn-check-outlined-steel");
 //Gewicht
 var min_weight = document.getElementById();
 var max_weight = document.getElementById();
