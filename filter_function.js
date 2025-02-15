@@ -7,7 +7,7 @@ console.log(pokemon)
 //Evo-Items
 
 
-var folterData = [...pokemon];
+var folterData = pokemon;
 const table = document.createElement('table');
 
 var tableBody = document.getElementById("tableBody");
