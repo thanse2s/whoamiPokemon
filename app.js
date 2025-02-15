@@ -1,10 +1,6 @@
 // Beispiel-Daten
-const pokemonData = [
-    { name: 'Pikachu', typ1: 'electric', typ2: 'fighting', form: 'Mega', pre_evo: '', post_evo: 'Raichu', evo_typ: 'LevelUp', generation: 1, size: 0.4, weight: 6 },
-    { name: 'Bulbasaur', typ1: 'leaf', typ2: 'poison', form: 'Aloa', pre_evo: '', post_evo: 'Ivysaur', evo_typ: 'LevelUp', generation: 1, size: 0.7, weight: 6.9 },
-    { name: 'Squirtle', typ1: 'water', typ2: '', form: 'Mega', pre_evo: '', post_evo: 'Wartortle', evo_typ: 'LevelUp', generation: 1, size: 0.5, weight: 9 },
-    // Füge hier mehr Pokémon hinzu
-];
+import { pokemonData } from "./pokemon.js";
+
 
 let filteredData = [...pokemonData];
 
