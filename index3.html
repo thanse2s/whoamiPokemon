@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter für Liste</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .filter-section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Pokémon Filter</h1>
+
+    <!-- Filterbereich -->
+    <div class="filter-section">
+        <h3>Filter Optionen</h3>
+        <div class="row">
+            <div class="col">
+                <label class="form-check-label">Typ 1:</label>
+                <div id="filter-typ1" class="btn-group" role="group" aria-label="Typ1 Filter">
+                    <button type="button" class="btn btn-outline-primary" data-filter="fire">Feuer</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="water">Wasser</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="leaf">Pflanze</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="bug">Käfer</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="dark">Unlicht</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="dragon">Drache</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="electric">Elektro</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="fairy">Fee</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="fighting">Kampf</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="flying">Flug</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="ghost">Gespenst</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="ground">Boden</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="ice">Eis</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="normal">Normal</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="poison">Gift</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="psychic">Psycho</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="rock">Gestein</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="steel">Stahl</button>
+                </div>
+            </div>
+
+            <div class="col">
+                <label class="form-check-label">Form:</label>
+                <div id="filter-form" class="btn-group" role="group" aria-label="Form Filter">
+                    <button type="button" class="btn btn-outline-secondary" data-filter="mega">Mega</button>
+                    <button type="button" class="btn btn-outline-secondary" data-filter="alola">Alola</button>
+                    <button type="button" class="btn btn-outline-secondary" data-filter="galar">Galar</button>
+                </div>
+            </div>
+
+            <div class="col">
+                <label class="form-check-label">Evolutions-Typ:</label>
+                <div id="filter-evo" class="btn-group" role="group" aria-label="Evolution Filter">
+                    <button type="button" class="btn btn-outline-success" data-filter="LevelUp">LevelUp</button>
+                    <button type="button" class="btn btn-outline-success" data-filter="Trade">Tausch</button>
+                    <button type="button" class="btn btn-outline-success" data-filter="Item">Item</button>
+                    <button type="button" class="btn btn-outline-success" data-filter="Friendship">Freundschaft</button>
+                </div>
+            </div>
+
+            <div class="col">
+                <label for="generation">Generation:</label>
+                <select id="generation" class="form-select">
+                    <option value="1">Generation 1</option>
+                    <option value="2">Generation 2</option>
+                    <option value="3">Generation 3</option>
+                    <option value="4">Generation 4</option>
+                    <option value="5">Generation 5</option>
+                    <option value="6">Generation 6</option>
+                    <option value="7">Generation 7</option>
+                    <option value="8">Generation 8</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pokémon Tabelle -->
+    <table class="table table-striped mt-4">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Typ 1</th>
+            <th scope="col">Typ 2</th>
+            <th scope="col">Form</th>
+            <th scope="col">Pre Evo</th>
+            <th scope="col">Post Evo</th>
+            <th scope="col">Evo Typ</th>
+            <th scope="col">Generation</th>
+        </tr>
+        </thead>
+        <tbody id="pokemon-table">
+        <!-- Pokémon-Daten werden hier erscheinen -->
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Beispiel Pokémon-Daten
+    const pokemonData = [
+        { name: "Pikachu", typ1: "electric", typ2: "fairy", form: "none", pre_evo: "", post_evo: "Raichu", evo_typ: "LevelUp", generation: 1 },
+        { name: "Bulbasaur", typ1: "grass", typ2: "poison", form: "none", pre_evo: "", post_evo: "Ivysaur", evo_typ: "LevelUp", generation: 1 },
+        { name: "Alolan Raichu", typ1: "electric", typ2: "psychic", form: "Alola", pre_evo: "Pikachu", post_evo: "", evo_typ: "LevelUp", generation: 7 },
+        { name: "Mega Charizard", typ1: "fire", typ2: "flying", form: "Mega", pre_evo: "Charmander", post_evo: "Charizard", evo_typ: "LevelUp", generation: 1 }
+    ];
+
+    // Filterfunktionen
+    function filterPokemon(pokemon) {
+        const activeFilters = {
+            typ1: new Set(),
+            form: new Set(),
+            evo: new Set(),
+            generation: parseInt(document.getElementById("generation").value)
+        };
+
+        // Alle aktiven Filter auslesen
+        document.querySelectorAll('#filter-typ1 .btn-primary.active').forEach(btn => activeFilters.typ1.add(btn.dataset.filter));
+        document.querySelectorAll('#filter-form .btn-secondary.active').forEach(btn => activeFilters.form.add(btn.dataset.filter));
+        document.querySelectorAll('#filter-evo .btn-success.active').forEach(btn => activeFilters.evo.add(btn.dataset.filter));
+
+        // Filter anwenden
+        if (activeFilters.typ1.size && !activeFilters.typ1.has(pokemon.typ1)) return false;
+        if (activeFilters.form.size && !activeFilters.form.has(pokemon.form)) return false;
+        if (activeFilters.evo.size && !activeFilters.evo.has(pokemon.evo_typ)) return false;
+        if (activeFilters.generation && pokemon.generation > activeFilters.generation) return false;
+
+        return true;
+    }
+
+    function updateTable() {
+        const filteredPokemon = pokemonData.filter(filterPokemon);
+        const tableBody = document.getElementById('pokemon-table');
+        tableBody.innerHTML = '';
+        filteredPokemon.forEach(pokemon => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+          <td>${pokemon.name}</td>
+          <td>${pokemon.typ1}</td>
+          <td>${pokemon.typ2}</td>
+          <td>${pokemon.form}</td>
+          <td>${pokemon.pre_evo}</td>
+          <td>${pokemon.post_evo}</td>
+          <td>${pokemon.evo_typ}</td>
+          <td>${pokemon.generation}</td>
+        `;
+            tableBody.appendChild(row);
+        });
+    }
+
+    // Filter Button-Event-Listener
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            btn.classList.toggle('active');
+            updateTable();
+        });
+    });
+
+    // Dropdown für Generation
+    document.getElementById('generation').addEventListener('change', updateTable);
+
+    // Initiale Tabelle laden
+    updateTable();
+</script>
+</body>
+</html>
