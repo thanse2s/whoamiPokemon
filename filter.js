@@ -1,3 +1,6 @@
-import {pokemonTypes} from "./pokemon.js";
+import {pokemonData} from "./pokemon.js";
 
-console.log(pokemonTypes);
+const maxSize = Math.max(pokemonData.map(poke => poke.Größe));
+const maxWeight = Math.max(pokemonData.map(poke => poke.Gewicht));
+
+Console.log(maxSize, maxWeight)
