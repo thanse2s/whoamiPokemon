@@ -55,26 +55,26 @@ const table = document.createElement('table');
 // https://www.geeksforgeeks.org/how-to-create-an-html-table-from-an-object-array-using-javascript/
 
 
-function renderFilteredData(list) {
+function renderFilteredData() {
     let tableHTML=`<table border="1"><tr>`
 
-    Object.keys(list[0]).forEach((key) => {
-        tableHTML+=`<td>${list[0][key]}</td>`
+    Object.keys(folterData[0]).forEach((key) => {
+        tableHTML+=`<td>${folterData[0][key]}</td>`
     })
 
     tableHTML+=`</tr>`
 
-    list.forEach(item =>{
+    folterData.forEach(item =>{
         tableHTML+=`<tr>`;
         Object.values(item).forEach(value=>{
             tableHTML+=`<td>${item[value]}</td>`
-            console.log(value)
         });
         tableHTML+=`</tr>`
     });
     tableHTML+=`</table>`
 
     document.getElementById("tableBody").innerHTML=tableHTML;
+    console.log(tableHTML);
 }
 
-renderFilteredData(pokemon);
+renderFilteredData();
