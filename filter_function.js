@@ -45,6 +45,8 @@ var friendship = document.getElementById("btn-check-outlined-friendship");
 var item = document.getElementById("btn-check-outlined-item");
 //Evo-Items
 
+
+let folterData = [...pokemon];
 const tablebody = document.getElementById('tableBody');
 const table = document.createElement('table');
 
@@ -53,20 +55,30 @@ const table = document.createElement('table');
 // https://www.geeksforgeeks.org/how-to-create-an-html-table-from-an-object-array-using-javascript/
 
 
-function renderFilteredData() {
-    const resultContainer = document.getElementById('tableBody');
-    resultContainer.innerHTML = ''; // Clear previous results
-    filteredData.forEach(pokemon => {
-        const pokemonDiv = document.createElement('div');
-        pokemonDiv.textContent = `${pokemon.name} - Größe: ${pokemon.size}m, Gewicht: ${pokemon.weight}kg`;
-        resultContainer.appendChild(pokemonDiv);
+
+
+
+
+
+function renderFilteredData(list) {
+    let tableHTML=`<table border="1"><tr>`
+
+    Object.keys(list[0]).forEach((key) => {
+        tableHTML+=`<td>${list[0][key]}</td>`
+    })
+
+    tableHTML+=`</tr>`
+
+    list.forEach(item =>{
+        tableHTML+=`<tr>`;
+        Object.values(item).forEach(value=>{
+            tableHTML+=`<td>${item[value]}</td>`
+        });
+        tableHTML+=`</tr>`
     });
+    tableHTML+=`</table>`
+
+    document.getElementById("tableBody").innerHTML=tableHTML;
 }
 
-
-
-
-
-
-
-renderFilteredData();
+renderFilteredData(folterData);
