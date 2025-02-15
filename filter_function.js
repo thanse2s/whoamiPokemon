@@ -6,39 +6,47 @@ import { pokemon } from "./pokemon.js";
 //Gengre
 var sel_generation = document.getElementById("select_gen")
 //Typ
-var typ_wather= document.getElementById("btn-check-outlined-fire");
-var typ_fire=document.getElementById("btn-check-outlined-wather");
-var typ_leaf=document.getElementById("btn-check-outlined-leaf");
-var typ_electro=document.getElementById("btn-check-outlined-bug");
-var typ_dark=document.getElementById("btn-check-outlined-dark");
-var typ_fairy=document.getElementById("btn-check-outlined-dargon");
-var typ_dragon=document.getElementById("btn-check-outlined-electric");
-var typ_ground=document.getElementById("btn-check-outlined-fairy");
-var typ_stone=document.getElementById("btn-check-outlined-fighting");
-var typ_flying=document.getElementById("btn-check-outlined-flying");
-var typ_bug=document.getElementById("btn-check-outlined-ghost");
-var typ_ghost=document.getElementById("btn-check-outlined-ground");
-var typ_psi=document.getElementById("btn-check-outlined-ice");
-var typ_ice=document.getElementById("btn-check-outlined-normal");
-var typ_ice=document.getElementById("btn-check-outlined-poison");
-var typ_ice=document.getElementById("btn-check-outlined-psychic");
-var typ_ice=document.getElementById("btn-check-outlined-rock");
-var typ_ice=document.getElementById("btn-check-outlined-steel");
+var select_num_typ = document.getElementById("select_num_of_evo")
+var fire= document.getElementById("btn-check-outlined-fire");
+var wather=document.getElementById("btn-check-outlined-wather");
+var leaf=document.getElementById("btn-check-outlined-leaf");
+var bug=document.getElementById("btn-check-outlined-bug");
+var dark=document.getElementById("btn-check-outlined-dark");
+var dargon=document.getElementById("btn-check-outlined-dargon");
+var electric=document.getElementById("btn-check-outlined-electric");
+var fairy=document.getElementById("btn-check-outlined-fairy");
+var fighting=document.getElementById("btn-check-outlined-fighting");
+var flying=document.getElementById("btn-check-outlined-flying");
+var ghost=document.getElementById("btn-check-outlined-ghost");
+var ground=document.getElementById("btn-check-outlined-ground");
+var ice=document.getElementById("btn-check-outlined-ice");
+var normal=document.getElementById("btn-check-outlined-normal");
+var poison=document.getElementById("btn-check-outlined-poison");
+var psychic=document.getElementById("btn-check-outlined-psychic");
+var rock=document.getElementById("btn-check-outlined-rock");
+var steel=document.getElementById("btn-check-outlined-steel");
 //Gewicht
-var min_weight = document.getElementById();
-var max_weight = document.getElementById();
+var min_weight = document.getElementById("min-weight");
+var max_weight = document.getElementById("max-weight");
 //Höhe
-var min_height = document.getElementById();
-var max_height = document.getElementById();
+var min_height = document.getElementById("min-height");
+var max_height = document.getElementById("max-height");
 //Form
-
+var mega = document.getElementById("btn-check-outlined-form_mega");
+var aloa = document.getElementById("btn-check-outlined-form_aloa");
+var galar = document.getElementById("btn-check-outlined-form_galar");
 //Evo
-var pre_evo = document.getElementById();
-var post_evo = document.getElementById();
+var pre_evo = document.getElementById("btn-check-outlined-pre_evo");
+var post_evo = document.getElementById("btn-check-outlined-post_evo");
 //Evo-Typ
+var level_up = document.getElementById("btn-check-outlined-levelup");
+var trade = document.getElementById("btn-check-outlined-trade");
+var friendship = document.getElementById("btn-check-outlined-friendship");
+var item = document.getElementById("btn-check-outlined-item");
 //Evo-Items
 
-
+const tablebody = document.getElementById('tableBody');
+const table = document.createElement('table');
 
 //var tableBody = document.getElementById("tableBody");
 //FtableBody.innerHTML=pokemon
@@ -46,7 +54,7 @@ var post_evo = document.getElementById();
 
 function createStartConfig(){
 
-    const table = document.createElement('table');
+
     table.classList.add('table')
     table.classList.add('table-bordered')
     
@@ -69,18 +77,51 @@ function createStartConfig(){
         table.appendChild(row);
     });
 
-    const tablebody = document.getElementById('tableBody');
+
     tableBody.appendChild(table);
 }
 
+function getFilterList(){
+    var filterList = pokemon.filter(filterGen);
 
 
-
-
-
-
-
-function sametyp(typ){    
 }
+
+function filterGen(typ){
+    if(typ.Generation<=sel_generation.value){
+        return true;
+    }
+    return false;
+}
+
+document.querySelector("#select_gen").onchange = function(){
+    tableBody.removeChild(table);
+    var filterList=pokemon.filter(filterGen);
+    table.classList.add('table')
+    table.classList.add('table-bordered')
+
+
+    const headerRow = document.createElement('tr');
+    Object.keys(filterList[0]).forEach(key=>{
+        const th = document.createElement('th');
+        th.appendChild(document.createTextNode(key));
+        headerRow.appendChild(th);
+    })
+    table.appendChild(headerRow);
+
+    filterList.forEach(item=>{
+        const row = document.createElement('tr');
+        Object.values(item).forEach(value=>{
+            const td=document.createElement('td');
+            td.appendChild(document.createTextNode(value));
+            row.appendChild(td);
+        });
+        table.appendChild(row);
+    });
+
+    tableBody.appendChild(table);
+
+}
+
 
 createStartConfig();
