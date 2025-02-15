@@ -52,41 +52,21 @@ const table = document.createElement('table');
 //FtableBody.innerHTML=pokemon
 // https://www.geeksforgeeks.org/how-to-create-an-html-table-from-an-object-array-using-javascript/
 
-function createStartConfig(){
 
-
-    table.classList.add('table')
-    table.classList.add('table-bordered')
-    
-
-    const headerRow = document.createElement('tr');    
-    Object.keys(pokemon[0]).forEach(key=>{
-        const th = document.createElement('th');
-        th.appendChild(document.createTextNode(key));
-        headerRow.appendChild(th);
-    })
-    table.appendChild(headerRow);
-
-    pokemon.forEach(item=>{
-        const row = document.createElement('tr');
-        Object.values(item).forEach(value=>{
-            const td=document.createElement('td');
-            td.appendChild(document.createTextNode(value));
-            row.appendChild(td);
-        });
-        table.appendChild(row);
+function renderFilteredData() {
+    const resultContainer = document.getElementById('tableBody');
+    resultContainer.innerHTML = ''; // Clear previous results
+    filteredData.forEach(pokemon => {
+        const pokemonDiv = document.createElement('div');
+        pokemonDiv.textContent = `${pokemon.name} - Größe: ${pokemon.size}m, Gewicht: ${pokemon.weight}kg`;
+        resultContainer.appendChild(pokemonDiv);
     });
-
-
-    tableBody.appendChild(table);
-}
-
-function getFilterList(){
-    var filterList = pokemon.filter(filterGen);
 }
 
 
 
 
 
-createStartConfig();
+
+
+renderFilteredData();
