@@ -55,11 +55,6 @@ const table = document.createElement('table');
 // https://www.geeksforgeeks.org/how-to-create-an-html-table-from-an-object-array-using-javascript/
 
 
-
-
-
-
-
 function renderFilteredData(list) {
     let tableHTML=`<table border="1"><tr>`
 
@@ -81,4 +76,4 @@ function renderFilteredData(list) {
     document.getElementById("tableBody").innerHTML=tableHTML;
 }
 
-renderFilteredData(folterData);
+renderFilteredData(pokemon);
