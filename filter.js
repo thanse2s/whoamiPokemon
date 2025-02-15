@@ -1,1 +1,3 @@
-console.log("Hallo World about js script")
+import {pokemonTypes} from "./pokemon.js";
+
+console.log(pokemonTypes);
