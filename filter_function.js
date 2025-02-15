@@ -83,45 +83,10 @@ function createStartConfig(){
 
 function getFilterList(){
     var filterList = pokemon.filter(filterGen);
-
-
 }
 
-function filterGen(typ){
-    if(typ.Generation<=sel_generation.value){
-        return true;
-    }
-    return false;
-}
-
-document.querySelector("#select_gen").onchange = function(){
-    tableBody.removeChild(table);
-    var filterList=pokemon.filter(filterGen);
-    table.classList.add('table')
-    table.classList.add('table-bordered')
 
 
-    const headerRow = document.createElement('tr');
-    Object.keys(filterList[0]).forEach(key=>{
-        const th = document.createElement('th');
-        th.appendChild(document.createTextNode(key));
-        headerRow.appendChild(th);
-    })
-    table.appendChild(headerRow);
-
-    filterList.forEach(item=>{
-        const row = document.createElement('tr');
-        Object.values(item).forEach(value=>{
-            const td=document.createElement('td');
-            td.appendChild(document.createTextNode(value));
-            row.appendChild(td);
-        });
-        table.appendChild(row);
-    });
-
-    tableBody.appendChild(table);
-
-}
 
 
 createStartConfig();
