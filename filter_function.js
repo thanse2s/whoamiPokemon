@@ -1,5 +1,5 @@
 import { pokemon } from "./pokemon.js";
-//console.log(pokemon)
+console.log(pokemon)
 
 
 ///Filter Elemente
