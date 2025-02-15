@@ -46,12 +46,12 @@ var item = document.getElementById("btn-check-outlined-item");
 //Evo-Items
 
 
-let folterData = [...pokemon];
+var folterData = [...pokemon];
 const tablebody = document.getElementById('tableBody');
 const table = document.createElement('table');
 
 //var tableBody = document.getElementById("tableBody");
-//FtableBody.innerHTML=pokemon
+tableBody.innerHTML=folterData
 // https://www.geeksforgeeks.org/how-to-create-an-html-table-from-an-object-array-using-javascript/
 
 
