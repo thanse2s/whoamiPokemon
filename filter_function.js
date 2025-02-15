@@ -68,6 +68,7 @@ function renderFilteredData(list) {
         tableHTML+=`<tr>`;
         Object.values(item).forEach(value=>{
             tableHTML+=`<td>${item[value]}</td>`
+            console.log(value)
         });
         tableHTML+=`</tr>`
     });
