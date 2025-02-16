@@ -19,13 +19,13 @@ function showUpList(){
 
     let tableHTML = `<table border="1"><tr>`
 
-    Object.keys(filterList[0]).forEach(key=>{
+    Object.keys(pokemonList[0]).forEach(key=>{
         tableHTML += `<th>${key}</th>`
     });
 
     tableHTML += `</tr>`
 
-    filterList.forEach(item=>{
+    pokemonList.forEach(item=>{
         tableHTML += `<tr>`
         Object.keys(item).forEach(key=>{
             tableHTML += `<td>${key}</td>`
