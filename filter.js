@@ -12,23 +12,23 @@ document.getElementById("min-weight").value = minWeight;
 document.getElementById("min-height").value = minSize;
 
 
-let filterList = pokemonList;
+let filterList = [...pokemonList];
 let tableBody = document.getElementById("tableBody");
 
 function showUpList(){
 
     let tableHTML = `<table border="1"><tr>`
 
-    Object.keys(pokemonList[0]).forEach(key=>{
+    Object.keys(filterList[0]).forEach(key=>{
         tableHTML += `<th>${key}</th>`
     });
 
     tableHTML += `</tr>`
 
-    pokemonList.forEach(item=>{
+    filterList.forEach(item=>{
         tableHTML += `<tr>`
-        Object.keys(item).forEach(key=>{
-            tableHTML += `<td>${key}</td>`
+        Object.values(item).forEach(value=>{
+            tableHTML += `<td>${value}</td>`
         })
         tableHTML += `</tr>`
     })
