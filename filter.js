@@ -25,10 +25,10 @@ function showUpList(){
 
     tableHTML += `</tr>`
 
-    filterList[0].forEach(item=>{
+    filterList.forEach(item=>{
         tableHTML += `<tr>`
-        Object.keys(filterList[0]).forEach(key=>{
-            tableHTML += `<td>${item}</td>`
+        Object.keys(item).forEach(key=>{
+            tableHTML += `<td>${key}</td>`
         })
         tableHTML += `</tr>`
     })
