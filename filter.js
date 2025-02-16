@@ -13,6 +13,7 @@ document.getElementById("min-height").value = minSize;
 
 
 let filterList = [...pokemonList];
+let tableBody = document.getElementById("tableBody");
 
 function showUpList(){
 
@@ -25,7 +26,7 @@ function showUpList(){
     tableHTML += `</tr>`
 
 
-
+    tableBody.innerHTML=tableHTML
 
 }
 showUpList()
