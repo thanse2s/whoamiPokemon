@@ -1,7 +1,7 @@
 import { pokemon } from "./pokemon.js";
 
-let maxSize = Math.max(pokemon.map(poke => poke.Hight));
-let maxWeight = Math.max(pokemon.map(poke => poke.Gewicht));
+const maxSize = Math.max(pokemon.map(poke => poke.Hight));
+const maxWeight = Math.max(pokemon.map(poke => poke.Gewicht));
 
 
 console.log(maxWeight);
