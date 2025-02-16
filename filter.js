@@ -1,4 +1,4 @@
-import { pokemonList } from "./pokemonList.js";
+import { pokemonList } from "./pokemonlist.js";
 
 const maxSize = Math.max(...pokemonList.map(poke => poke.Hight));
 const maxWeight = Math.max(...pokemonList.map(poke => poke.Gewicht));
