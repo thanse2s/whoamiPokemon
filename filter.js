@@ -12,7 +12,7 @@ document.getElementById("min-weight").value = minWeight;
 document.getElementById("min-height").value = minSize;
 
 
-let filterList = [...pokemonList];
+let filterList = pokemonList;
 let tableBody = document.getElementById("tableBody");
 
 function showUpList(){
