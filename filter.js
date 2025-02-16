@@ -7,7 +7,7 @@ const maxWeight = Math.max(pokemon.map(poke => poke.Gewicht));
 console.log(maxWeight);
 console.log(maxWeight);
 console.log("HelloWorld!");
-console(pokemon);
+console.log(pokemon);
 
 document.getElementById("max-weight").value = maxWeight;
 document.getElementById("max-height").value = maxSize;
