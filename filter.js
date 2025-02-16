@@ -1,9 +1,9 @@
-import { pokemon } from "./pokemon.js";
+import { pokemonList } from "./pokemonList.js";
 
-const maxSize = Math.max(...pokemon.map(poke => parseFloat(poke.Hight)));
-const maxWeight = Math.max(...pokemon.map(poke => parseFloat(poke.Gewicht)));
-const minSize = Math.min(...pokemon.map(poke => parseFloat(poke.Hight)));
-const minWeight = Math.min(...pokemon.map(poke => parseFloat(poke.Gewicht)));
+const maxSize = Math.max(...pokemonList.map(poke => poke.Hight));
+const maxWeight = Math.max(...pokemonList.map(poke => poke.Gewicht));
+const minSize = Math.min(...pokemonList.map(poke => poke.Hight));
+const minWeight = Math.min(...pokemonList.map(poke => poke.Gewicht));
 
 console.log(minSize);
 console.log(minWeight);
