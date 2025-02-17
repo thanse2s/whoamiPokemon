@@ -78,7 +78,7 @@ function filterList(){
 
 
 
-
+    showUpList(filterdList);
 }
 
 
