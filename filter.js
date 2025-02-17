@@ -22,7 +22,7 @@ document.getElementById("min-height").value = minSize;
 
 
 
-let filterdList = []
+let filterdList
 let tableBody = document.getElementById("tableBody");
 
 function collectData(){
@@ -69,10 +69,8 @@ function filterList(){
 
     console.log("Testing")
     collectData();
-    for(let item in pokemonList){
-        if(checkGen)
-            filterdList.push(item)
-    }
+    let filterdList = pokemonList.filter(checkGen);
+  
 
 
 
