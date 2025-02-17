@@ -157,14 +157,18 @@ function checkEvoTyp(pokemon){
 function checkEvoItem(pokemon){}
 function checkSize(pokemon){
 
-    if(minSize_value <= pokemon.Hight <= maxSize_value)
+    console.log(minSize_value)
+    console.log(maxSize_value)
+    if(minSize_value <= pokemon.Hight &&  pokemon.Hight <= maxSize_value)
         return true;
     return false;
 
 }
 function checkWight(pokemon){
 
-    if(minWeight_value <= pokemon.Gewicht <= maxSize_value)
+    console.log(minWeight_value)
+    console.log(maxWeight_value)
+    if(minWeight_value <= pokemon.Gewicht && pokemon.Gewicht <= maxWeight_value)
         return true;
     return false;
 }
