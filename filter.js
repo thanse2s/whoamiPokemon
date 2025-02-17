@@ -250,8 +250,12 @@ function shopPlayerPoke(player){
     
 }
 
+function start_game(){
+    shopPlayerPoke("player1")
+    shopPlayerPoke("player2")
+}
+
 
 document.getElementById("start_filter").onclick = function(){filterList()};
-document.getElementById("player1_poke_id").onchange = function(){shopPlayerPoke("player1")};
-document.getElementById("player2_poke_id").onchange = function(){shopPlayerPoke("player2")}
+document.getElementById("start_game").onclick = function(){start_game()};
 showUpList(pokemonList)
