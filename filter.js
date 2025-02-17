@@ -19,6 +19,10 @@ document.getElementById("max-height").value = maxSize;
 document.getElementById("min-weight").value = minWeight;
 document.getElementById("min-height").value = minSize;
 
+//Disaple FormBUttons
+document.getElementById("btn-check-outlined-form_mega").disable;
+document.getElementById("btn-check-outlined-form_aloa").disable;
+document.getElementById("btn-check-outlined-form_galar").disable;
 
 
 
@@ -133,7 +137,7 @@ function checkEvoTyp(pokemon){
 
     if(!friendship && pokemon.Evo_Typ=="levelFriendship")
         return false;
-    
+
     if(!item && pokemon.Evo_Typ=="useItem")
         return false;
 
