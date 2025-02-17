@@ -35,6 +35,7 @@ function collectData(){
 
 function filterList(){
 
+    console.log("Testing")
     collectData();
 
 
