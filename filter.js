@@ -11,30 +11,24 @@ document.getElementById("max-height").value = maxSize;
 document.getElementById("min-weight").value = minWeight;
 document.getElementById("min-height").value = minSize;
 
-let gen;
+
 
 let filterList = [...pokemonList];
 let tableBody = document.getElementById("tableBody");
 
 
 
-function usefilter(){
 
-    console.log("Filter Triggert");
-    gen = document.createElement('select_gen').value;
-    filterList.filter(genFilter);
+function genFilter(gen){
+    filterList = pokemonList.filter(pokemon => pokemon.Gewicht === gen)
     showUpList();
 }
 
 
-function genFilter(item){
-    if(item.Generation<=gen)
-        return true;
-    return false;
-}
-
-
-document.getElementById("select_gen").addEventListener('change',usefilter);
+document.getElementById("select_gen").addEventListener('change',(e)=>{
+    const gen = parseInt(e.target.value);
+    genFilter(gen);
+});
 
 
 function showUpList(){
