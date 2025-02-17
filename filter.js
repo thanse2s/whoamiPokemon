@@ -71,7 +71,7 @@ function collectData(){
     maxWeight_value = document.getElementById("max-weight").value;
     minWeight_value = document.getElementById("min-weight").value;
     //ANz Typs
-    select_num_of_evo = document.getElementById("select_num_of_evo");
+    select_num_of_evo = document.getElementById("select_num_of_evo").value;
 
 
 }
@@ -204,7 +204,7 @@ function filterAnzTyp(pokemon){
         if (pokemon.Type2!="")
             return false;
     if (select_num_of_evo=="2")
-        if(pokemon.Type1!="" && pokemon.Type2=="")
+        if(pokemon.Type2=="")
             return false;
 
     return true;
