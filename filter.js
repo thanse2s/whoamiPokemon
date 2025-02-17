@@ -32,7 +32,7 @@ function collectData(){
     leaf = document.getElementById("btn-check-outlined-leaf").checked;
     bug = document.getElementById("btn-check-outlined-bug").checked;
     dark = document.getElementById("btn-check-outlined-dark").checked;
-    dragon = document.getElementById("btn-check-outlined-dragon").checked;
+    dragon = document.getElementById("btn-check-outlined-dargon").checked;
     electric = document.getElementById("btn-check-outlined-electric").checked;
     fariy = document.getElementById("btn-check-outlined-fariy").checked;
     fight = document.getElementById("btn-check-outlined-fighting").checked;
