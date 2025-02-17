@@ -11,7 +11,8 @@ let preevo,postevo,not_preevo,not_postevo;
 let levelUp,trade,friendship,item,move;
 let maxSize_value,minSize_value;
 let maxWeight_value,minWeight_value;
-let gen;
+let gen,filtergen;
+let select_num_of_evo;
 
 //Set max an min Value Weight and Size
 document.getElementById("max-weight").value = maxWeight;
@@ -69,6 +70,8 @@ function collectData(){
     //Weight
     maxWeight_value = document.getElementById("max-weight").value;
     minWeight_value = document.getElementById("min-weight").value;
+    //ANz Typs
+    select_num_of_evo = document.getElementById("select_num_of_evo");
 
 
 }
@@ -189,13 +192,23 @@ function filterList(){
     filterdList  = filterdList.filter(checkEvoTyp)
     filterdList  = filterdList.filter(checkSize)
     filterdList  = filterdList.filter(checkWight)
+    filterdList  = filterdList.filter(filterAnzTyp)
 
 
 
     showUpList(filterdList);
 }
 
+function filterAnzTyp(pokemon){
+    if (select_num_of_evo=="1")
+        if (pokemon.Type2!="")
+            return false;
+    if (select_num_of_evo=="2")
+        if(pokemon.Type1!="" && pokemon.Type2=="")
+            return false;
 
+    return true;
+}
 
 function showUpList(showdList){
 
