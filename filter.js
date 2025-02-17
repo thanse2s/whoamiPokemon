@@ -7,7 +7,7 @@ const minWeight = Math.min(...pokemonList.map(poke => poke.Gewicht));
 
 
 let fire,water,leaf,bug,dark,dragon,electric,fariy,fight,flyign,ghost,ground,ice,normal,poison,psycho,rock,steel;
-let preevo,postevo;
+let preevo,postevo,not_preevo,not_postevo;
 let levelUp,trade,friendship,item,move;
 let maxSize_value,minSize_value;
 let maxWeight_value,minWeight_value;
@@ -55,6 +55,8 @@ function collectData(){
     //Evo
     preevo = document.getElementById("btn-check-outlined-pre_evo").checked;
     postevo = document.getElementById("btn-check-outlined-post_evo").checked;
+    not_preevo = document.getElementById("btn-check-outlined-not_pre_evo").checked;
+    not_postevo = document.getElementById("btn-check-outlined-not_post_evo").checked;
     //Evo Typ
     levelUp = document.getElementById("btn-check-outlined-lvlup").checked;
     trade = document.getElementById("btn-check-outlined-trade").checked;
@@ -72,7 +74,7 @@ function collectData(){
 }
 
 
-function checkGen(pokemon){
+function selectkGen(pokemon){
     if(pokemon.Generation<=gen)
         return true;
     return false;
@@ -126,6 +128,10 @@ function checkEvo(pokemon){
         return false;
     if(!postevo && pokemon.Post_Evo != "")
         return false;
+    if(!not_preevo && pokemon.Pre_Evo == "")
+        return false;
+    if(!not_postevo && pokemon.Post_Evo == "")
+        return false;
 
     return true;
 
@@ -177,7 +183,7 @@ function filterList(){
 
     console.log("Testing")
     collectData();
-    let filterdList = pokemonList.filter(checkGen);
+    let filterdList = pokemonList.filter(selectkGen);
     filterdList  = filterdList.filter(checkEvo)
     filterdList  = filterdList.filter(checkTyp)
     filterdList  = filterdList.filter(checkEvoTyp)
