@@ -220,9 +220,9 @@ function showPlayerPoke(player){
     let getPokemon;
 
     if(player=="player1")
-        getPokemon = pokemonList.filter(poke => poke.ID =p1_pk_id)
+        getPokemon = pokemonList.filter(poke => poke.ID == p1_pk_id)
     if(player=="player2")
-        getPokemon = pokemonList.filter(poke => poke.ID =p2_pk_id)
+        getPokemon = pokemonList.filter(poke => poke.ID == p2_pk_id)
 
 
     let tableHTML = `<table class="table table-dark"><tr>`
