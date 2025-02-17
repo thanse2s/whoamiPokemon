@@ -150,11 +150,7 @@ function filterList(){
     let filterdList = pokemonList.filter(checkGen);
     filterdList  = filterdList.filter(checkEvo)
     filterdList  = filterdList.filter(checkTyp)
-    filterdList  = filterdList.filter(checkEvoTyp)
-  
-
-
-
+    //filterdList  = filterdList.filter(checkEvoTyp)
 
 
     showUpList(filterdList);
