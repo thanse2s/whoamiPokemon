@@ -63,41 +63,41 @@ function checkGen(pokemon){
 }
 function checkTyp(pokemon){
 
-    if(!fire && (pokemon.Type1 == "Fire" || pokemon.Typ2 == "Fire"))
+    if(!fire && (pokemon.Type1 == "Fire" || pokemon.Type2 == "Fire"))
         return false;
-    if(!water && (pokemon.Type1 == "Water" || pokemon.Typ2 == "Water"))
+    if(!water && (pokemon.Type1 == "Water" || pokemon.Type2 == "Water"))
         return false;
-    if(!leaf && (pokemon.Type1 == "Grass" || pokemon.Typ2 == "Grass"))
+    if(!leaf && (pokemon.Type1 == "Grass" || pokemon.Type2 == "Grass"))
         return false;
-    if(!bug && (pokemon.Type1 == "Bug" || pokemon.Typ2 == "Bug"))
+    if(!bug && (pokemon.Type1 == "Bug" || pokemon.Type2 == "Bug"))
         return false;
-    if(!dark && (pokemon.Type1 == "Dark" || pokemon.Typ2 == "Dark"))
+    if(!dark && (pokemon.Type1 == "Dark" || pokemon.Type2 == "Dark"))
         return false;
-    if(!dragon && (pokemon.Type1 == "Dragon" || pokemon.Typ2 == "Dragon"))
+    if(!dragon && (pokemon.Type1 == "Dragon" || pokemon.Type2 == "Dragon"))
         return false;
-    if(!electric && (pokemon.Type1 == "Electric" || pokemon.Typ2 == "Electric"))
+    if(!electric && (pokemon.Type1 == "Electric" || pokemon.Type2 == "Electric"))
         return false;
-    if(!fariy && (pokemon.Type1 == "Fairy" || pokemon.Typ2 == "Fairy"))
+    if(!fariy && (pokemon.Type1 == "Fairy" || pokemon.Type2 == "Fairy"))
         return false;
-    if(!fight && (pokemon.Type1 == "Fighting" || pokemon.Typ2 == "Fighting"))
+    if(!fight && (pokemon.Type1 == "Fighting" || pokemon.Type2 == "Fighting"))
         return false;
-    if(!flyign && (pokemon.Type1 == "Flying" || pokemon.Typ2 == "Flying"))
+    if(!flyign && (pokemon.Type1 == "Flying" || pokemon.Type2 == "Flying"))
         return false;
-    if(!ghost && (pokemon.Type1 == "Ghost" || pokemon.Typ2 == "Ghost"))
+    if(!ghost && (pokemon.Type1 == "Ghost" || pokemon.Type2 == "Ghost"))
         return false;
-    if(!ground && (pokemon.Type1 == "Ground" || pokemon.Typ2 == "Ground"))
+    if(!ground && (pokemon.Type1 == "Ground" || pokemon.Type2 == "Ground"))
         return false;
-    if(!ice && (pokemon.Type1 == "Ice" || pokemon.Typ2 == "Ice"))
+    if(!ice && (pokemon.Type1 == "Ice" || pokemon.Type2 == "Ice"))
         return false;
-    if(!normal && (pokemon.Type1 == "Normal" || pokemon.Typ2 == "Normal"))
+    if(!normal && (pokemon.Type1 == "Normal" || pokemon.Type2 == "Normal"))
         return false;
-    if(!poison && (pokemon.Type1 == "Poison" || pokemon.Typ2 == "Poison"))
+    if(!poison && (pokemon.Type1 == "Poison" || pokemon.Type2 == "Poison"))
         return false;
-    if(!psycho && (pokemon.Type1 == "Psychic" || pokemon.Typ2 == "Psychic"))
+    if(!psycho && (pokemon.Type1 == "Psychic" || pokemon.Type2 == "Psychic"))
         return false;
-    if(!rock && (pokemon.Type1 == "Rock" || pokemon.Typ2 == "Rock"))
+    if(!rock && (pokemon.Type1 == "Rock" || pokemon.Type2 == "Rock"))
         return false;
-    if(!steel && (pokemon.Type1 == "Steel" || pokemon.Typ2 == "Steel"))
+    if(!steel && (pokemon.Type1 == "Steel" || pokemon.Type2 == "Steel"))
         return false;
 
     return true;
