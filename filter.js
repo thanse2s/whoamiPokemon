@@ -20,7 +20,7 @@ let tableBody = document.getElementById("tableBody");
 
 
 function genFilter(gen){
-    filterList = pokemonList.filter(pokemon => pokemon.Gewicht === gen)
+    filterList = pokemonList.filter(pokemon => pokemon.Generation <= gen)
     showUpList();
 }
 
