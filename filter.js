@@ -60,7 +60,7 @@ function checkGen(pokemon){
 }
 function checkTyp(pokemon){}
 function checkEvo(pokemon){}
-function checkEvo(pokemon){}
+function checkForm(pokemon){}
 function checkEvoTyp(pokemon){}
 function checkEvoItem(pokemon){}
 
