@@ -82,7 +82,7 @@ function filterList(){
     console.log("Testing")
     collectData();
     let filterdList = pokemonList.filter(checkGen);
-    filterList.filter(checkEvo)
+    filterdList.filter(checkEvo)
   
 
 
