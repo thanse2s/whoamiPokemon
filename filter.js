@@ -127,11 +127,11 @@ function checkTyp(pokemon){
 }
 
 function checkEvo(pokemon){
-    if(!preevo && pokemon.Pre_Evo != "")
+    if(!preevo && pokemon.Pre_Evo == "")
         return false;
     if(!postevo && pokemon.Post_Evo != "")
         return false;
-    if(!not_preevo && pokemon.Pre_Evo == "")
+    if(!not_preevo && pokemon.Pre_Evo != "")
         return false;
     if(!not_postevo && pokemon.Post_Evo == "")
         return false;
