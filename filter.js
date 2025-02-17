@@ -71,7 +71,7 @@ function filterList(){
     collectData();
     for(let item in pokemonList){
         if(checkGen)
-            filterdList.add(item)
+            filterdList.push(item)
     }
 
 
