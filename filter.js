@@ -28,25 +28,25 @@ let tableBody = document.getElementById("tableBody");
 function collectData(){
 
     fire = document.getElementById("btn-check-outlined-fire").checked;
-    wather = document.getElementById("btn_checkbox-outline-wather").checked;
-    leaf = document.getElementById("btn_checkbox-outline-leaf").checked;
-    bug = document.getElementById("btn_checkbox-outline-bug").checked;
-    dark = document.getElementById("btn_checkbox-outline-dark").checked;
-    dragon = document.getElementById("btn_checkbox-outline-dragon").checked;
-    electric = document.getElementById("btn_checkbox-outline-electric").checked;
-    fariy = document.getElementById("btn_checkbox-outline-fariy").checked;
-    fight = document.getElementById("btn_checkbox-outline-fighting").checked;
-    flyign = document.getElementById("btn_checkbox-outline-flying").checked;
-    ghost = document.getElementById("btn_checkbox-outline-ghost").checked;
-    ground = document.getElementById("btn_checkbox-outline-ground").checked;
-    ice = document.getElementById("btn_checkbox-outline-ice").checked;
-    normal = document.getElementById("btn_checkbox-outline-normal").checked;
-    poison = document.getElementById("btn_checkbox-outline-poison").checked;
-    psycho = document.getElementById("btn_checkbox-outline-psychic").checked;
-    rock = document.getElementById("btn_checkbox-outline-rock").checked;
-    steel = document.getElementById("btn_checkbox-outline-steel").checked;
+    wather = document.getElementById("btn_checkbox-outlined-wather").checked;
+    leaf = document.getElementById("btn_checkbox-outlined-leaf").checked;
+    bug = document.getElementById("btn_checkbox-outlined-bug").checked;
+    dark = document.getElementById("btn_checkbox-outlined-dark").checked;
+    dragon = document.getElementById("btn_checkbox-outlined-dragon").checked;
+    electric = document.getElementById("btn_checkbox-outlined-electric").checked;
+    fariy = document.getElementById("btn_checkbox-outlined-fariy").checked;
+    fight = document.getElementById("btn_checkbox-outlined-fighting").checked;
+    flyign = document.getElementById("btn_checkbox-outlined-flying").checked;
+    ghost = document.getElementById("btn_checkbox-outlined-ghost").checked;
+    ground = document.getElementById("btn_checkbox-outlined-ground").checked;
+    ice = document.getElementById("btn_checkbox-outlined-ice").checked;
+    normal = document.getElementById("btn_checkbox-outlined-normal").checked;
+    poison = document.getElementById("btn_checkbox-outlined-poison").checked;
+    psycho = document.getElementById("btn_checkbox-outlined-psychic").checked;
+    rock = document.getElementById("btn_checkbox-outlined-rock").checked;
+    steel = document.getElementById("btn_checkbox-outlined-steel").checked;
 
-    
+
 
    
 
@@ -65,10 +65,6 @@ function filterList(){
 
 
 }
-
-
-document.getElementById('start_filter').addEventListener('onclick', filterList());
-
 
 
 
@@ -94,4 +90,7 @@ function showUpList(showdList){
     tableBody.innerHTML=tableHTML
 
 }
+
+
+document.getElementById("start_filter").onclick = function(){filterList()};
 showUpList(pokemonList)
