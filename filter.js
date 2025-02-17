@@ -20,6 +20,7 @@ let tableBody = document.getElementById("tableBody");
 
 function usefilter(){
 
+    console.log("Filter Triggert");
     gen = document.createElement('select_gen').value;
     filterList.filter(genFilter);
     showUpList();
