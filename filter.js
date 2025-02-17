@@ -177,6 +177,9 @@ function filterList(){
     filterdList  = filterdList.filter(checkEvo)
     filterdList  = filterdList.filter(checkTyp)
     filterdList  = filterdList.filter(checkEvoTyp)
+    filterdList  = filterdList.filter(checkSize)
+    filterdList  = filterdList.filter(checkWight)
+
 
 
     showUpList(filterdList);
