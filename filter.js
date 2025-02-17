@@ -6,7 +6,7 @@ const minSize = Math.min(...pokemonList.map(poke => poke.Hight));
 const minWeight = Math.min(...pokemonList.map(poke => poke.Gewicht));
 
 
-let fire,wather,leaf,bug,dark,dragon,electric,fariy,fight,flyign,ghost,ground,ice,normal,poison,psycho,rock,steel;
+let fire,water,leaf,bug,dark,dragon,electric,fariy,fight,flyign,ghost,ground,ice,normal,poison,psycho,rock,steel;
 let preevo,postevo;
 let levelUp,trade,friendship,item;
 let maxSize_value,minSize_value;
