@@ -160,7 +160,7 @@ function filterList(){
 
 function showUpList(showdList){
 
-    let tableHTML = `<table border="1"><tr>`
+    let tableHTML = `<table class="table table-dark"><tr>`
 
     Object.keys(showdList[0]).forEach(key=>{
         tableHTML += `<th>${key}</th>`
