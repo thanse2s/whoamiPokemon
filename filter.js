@@ -27,6 +27,9 @@ let tableBody = document.getElementById("tableBody");
 
 function collectData(){
 
+    //Gen
+    gen = document.getElementById("select_gen").value;
+    //Typs
     fire = document.getElementById("btn-check-outlined-fire").checked;
     wather = document.getElementById("btn-check-outlined-wather").checked;
     leaf = document.getElementById("btn-check-outlined-leaf").checked;
@@ -45,19 +48,31 @@ function collectData(){
     psycho = document.getElementById("btn-check-outlined-psychic").checked;
     rock = document.getElementById("btn-check-outlined-rock").checked;
     steel = document.getElementById("btn-check-outlined-steel").checked;
+}
 
 
+function checkGen(pokemon){
+    if(pokemon.Generation<=gen)
+        return true;
+    return false;
 
-   
 
 }
+function checkTyp(pokemon){}
+function checkEvo(pokemon){}
+function checkEvo(pokemon){}
+function checkEvoTyp(pokemon){}
+function checkEvoItem(pokemon){}
 
 
 function filterList(){
 
     console.log("Testing")
     collectData();
-
+    for(let item in pokemonList){
+        if(checkGen)
+            filterdList.add(item)
+    }
 
 
 
