@@ -8,7 +8,7 @@ const minWeight = Math.min(...pokemonList.map(poke => poke.Gewicht));
 
 let fire,water,leaf,bug,dark,dragon,electric,fariy,fight,flyign,ghost,ground,ice,normal,poison,psycho,rock,steel;
 let preevo,postevo;
-let levelUp,trade,friendship,item;
+let levelUp,trade,friendship,item,move;
 let maxSize_value,minSize_value;
 let maxWeight_value,minWeight_value;
 let gen;
@@ -48,9 +48,16 @@ function collectData(){
     psycho = document.getElementById("btn-check-outlined-psychic").checked;
     rock = document.getElementById("btn-check-outlined-rock").checked;
     steel = document.getElementById("btn-check-outlined-steel").checked;
-
+    //Evo
     preevo = document.getElementById("btn-check-outlined-pre_evo").checked;
     postevo = document.getElementById("btn-check-outlined-post_evo").checked;
+    //Evo Typ
+    levelUp = document.getElementById("btn-check-outlined-lvlup").checked;
+    trade = document.getElementById("btn-check-outlined-trade").checked;
+    move = document.getElementById("btn-check-outlined-move").checked;
+    friendship = document.getElementById("btn-check-outlined-friendship").checked;
+    item = document.getElementById("btn-check-outlined-item").checked;
+
 }
 
 
@@ -114,7 +121,13 @@ function checkEvo(pokemon){
 
 }
 function checkForm(pokemon){}
-function checkEvoTyp(pokemon){}
+function checkEvoTyp(pokemon){
+
+
+
+
+
+}
 function checkEvoItem(pokemon){}
 function checkSize(pokemon){}
 function checkWight(pokemon){}

@@ -1,188 +1,188 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="utf-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link href="./style.css" rel="stylesheet"></link>
-    <head>
-    <body>
-        <script type="module" src="pokemon.js"></script>
-        <center>
-        <h1>Who am I! Pokemon-Edtion</h1>
-        <hr/>
-            <label>Generation:</label>
-            <select id="select_gen">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-            </select>
-        </div>
-        <div>
-             <!--Typ-->
-            <fieldset id="input_typs">
-                <legend>Typen</legend>
-                    <label>Anzal der Typen</label>
-                    <select id="select_num_of_evo">
-                        <option>-</option>
-                        <option>1</option>
-                        <option>2</option>
-                    </select>
-                    <br>
-                    <br>
-                    <div class="form-check form-check-inline">
-                        <!--Fire-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-fire" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-fire">Feuer</label>    
-                        <!--wather-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-wather" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-wather">Wasser</label>  
-                        <!--Leaf-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-leaf" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-leaf">Blatt</label>
-                        <!--Bug-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-bug" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-bug">Käfer</label>
-                        <!--Dark-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-dark" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-dark">Unlicht</label>
-                        <!--Dragon-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-dargon" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-dargon">Drache</label>
-                        <!--Elektro-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-electric" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-electric">Elektric</label>
-                        <!--Fee-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-fairy" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-fairy">Fee</label>
-                        <!--Fighting-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-fighting" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-fighting">Kampf</label>
-                    </div><br>
-                    <div class="form-check form-check-inline">
-                        <!--Flying-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-flying" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-flying">Flug</label>
-                        <!--Ghost-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-ghost" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-ghost">Geist</label>
-                        <!--Ground-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-ground" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-ground">Boden</label>
-                        <!--Ground-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-ice" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-ice">Eis</label>
-                        <!--Normal-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-normal" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-normal">Normal</label>
-                        <!--Gift-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-poison" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-poison">Gift</label>
-                        <!--Pysho-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-psychic" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-psychic">Pyscho</label>
-                        <!--Rock-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-rock" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-rock">Gestein</label>
-                        <!--Steeö-->             
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined-steel" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btn-check-outlined-steel">Stahl</label> 
-                    </div>
-            </fieldset>
-             <!--Gewicht-->
-            <fieldset id="input_weight">
-                <legend>Gewicht</legend>
-                <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder=0.0 aria-label="min" id="min-weight">
-                    <span class="input-group-text">-</span>
-                    <input type="number" class="form-control" placeholder=100 aria-label="max" id="max-weight">
-                </div>
-            </fieldset>
-             <!--Größe-->
-            <fieldset id="input_height">
-                <legend>Größe</legend>
-                <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder=0.0 aria-label="min" id="min-height">
-                    <span class="input-group-text">-</span>
-                    <input type="number" class="form-control" placeholder=9 aria-label="max" id="max-height">
-                </div>
-            </fieldset>
-            <!--Entwicklung-->
-            <fieldset id="input_evo">
-                <legend>Entwicklung</legend>
-                <div class="form-check form-check-inline">
-                    <!--Pre_EVO-->             
-                    <input type="checkbox" class="btn-check" id="btn-check-outlined-pre_evo" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary" for="btn-check-outlined-pre_evo">Vorentwicklung</label>   
-                    <!--Post_EVO-->             
-                    <input type="checkbox" class="btn-check" id="btn-check-outlined-post_evo" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary" for="btn-check-outlined-post_evo">Kann sich entwickeln</label> 
-                </div>
-            </fieldset>
-             <!--Entwicklungs-Typ-->
-            <fieldset id="input_evo_typ">
-                <legend>Entwicklungs-Typ</legend>
-                Bei dieser Frage/Option wird die Methode angezeigt welche benötigt wird dieses Pokemon zu werden.<br>
-                <div class="form-check form-check-inline">
-                     <!--LevelUp-->             
-                     <input type="checkbox" class="btn-check" id="btn-check-outlined-lvlup" autocomplete="off" checked>
-                     <label class="btn btn-outline-primary" for="btn-check-outlined-lvlup">LevelUp</label>
-                     <!--Tausch-->             
-                     <input type="checkbox" class="btn-check" id="btn-check-outlined-trade" autocomplete="off" checked>
-                     <label class="btn btn-outline-primary" for="btn-check-outlined-trade">Tausch</label>
-                     <!--Bewegung-->             
-                     <input type="checkbox" class="btn-check" id="btn-check-outlined-move" autocomplete="off" checked>
-                     <label class="btn btn-outline-primary" for="btn-check-outlined-move">Bewwgung</label>
-                     <!--Friendschip-->             
-                     <input type="checkbox" class="btn-check" id="btn-check-outlined-friendship" autocomplete="off" checked>
-                     <label class="btn btn-outline-primary" for="btn-check-outlined-friendship">Freundschfat</label>
-                     <!--Item-->             
-                     <input type="checkbox" class="btn-check" id="btn-check-outlined-item" autocomplete="off" checked>
-                     <label class="btn btn-outline-primary" for="btn-check-outlined-item">Item</label>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="./style.css" rel="stylesheet"></link>
+  <head>
+<body>
+<script type="module" src="pokemon.js"></script>
+<center>
+  <h1>Who am I! Pokemon-Edtion</h1>
+  <hr/>
+  <label>Generation:</label>
+  <select id="select_gen">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+  </select>
+  </div>
+  <div>
+    <!--Typ-->
+    <fieldset id="input_typs">
+      <legend>Typen</legend>
+      <label>Anzal der Typen</label>
+      <select id="select_num_of_evo">
+        <option>-</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+      <br>
+      <br>
+      <div class="form-check form-check-inline">
+        <!--Fire-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-fire" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-fire">Feuer</label>
+        <!--wather-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-wather" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-wather">Wasser</label>
+        <!--Leaf-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-leaf" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-leaf">Blatt</label>
+        <!--Bug-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-bug" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-bug">Käfer</label>
+        <!--Dark-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-dark" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-dark">Unlicht</label>
+        <!--Dragon-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-dargon" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-dargon">Drache</label>
+        <!--Elektro-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-electric" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-electric">Elektric</label>
+        <!--Fee-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-fairy" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-fairy">Fee</label>
+        <!--Fighting-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-fighting" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-fighting">Kampf</label>
+      </div><br>
+      <div class="form-check form-check-inline">
+        <!--Flying-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-flying" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-flying">Flug</label>
+        <!--Ghost-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-ghost" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-ghost">Geist</label>
+        <!--Ground-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-ground" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-ground">Boden</label>
+        <!--Ground-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-ice" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-ice">Eis</label>
+        <!--Normal-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-normal" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-normal">Normal</label>
+        <!--Gift-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-poison" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-poison">Gift</label>
+        <!--Pysho-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-psychic" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-psychic">Pyscho</label>
+        <!--Rock-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-rock" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-rock">Gestein</label>
+        <!--Steeö-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-steel" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-steel">Stahl</label>
+      </div>
+    </fieldset>
+    <!--Gewicht-->
+    <fieldset id="input_weight">
+      <legend>Gewicht</legend>
+      <div class="input-group mb-3">
+        <input type="number" step="0.1" class="form-control" placeholder=0.0 aria-label="min" id="min-weight">
+        <span class="input-group-text">-</span>
+        <input type="number" step="0.1" class="form-control" placeholder=100.0 aria-label="max" id="max-weight">
+      </div>
+    </fieldset>
+    <!--Größe-->
+    <fieldset id="input_height">
+      <legend>Größe</legend>
+      <div class="input-group mb-3">
+        <input type="number"  step="0.1" class="form-control" placeholder=0.0 aria-label="min" id="min-height">
+        <span class="input-group-text">-</span>
+        <input type="number" step="0.1" class="form-control" placeholder=9.0 aria-label="max" id="max-height">
+      </div>
+    </fieldset>
+    <!--Entwicklung-->
+    <fieldset id="input_evo">
+      <legend>Entwicklung</legend>
+      <div class="form-check form-check-inline">
+        <!--Pre_EVO-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-pre_evo" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-pre_evo">Vorentwicklung</label>
+        <!--Post_EVO-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-post_evo" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-post_evo">Kann sich entwickeln</label>
+      </div>
+    </fieldset>
+    <!--Entwicklungs-Typ-->
+    <fieldset id="input_evo_typ">
+      <legend>Entwicklungs-Typ</legend>
+      Bei dieser Frage/Option wird die Methode angezeigt welche benötigt wird dieses Pokemon zu werden.<br>
+      <div class="form-check form-check-inline">
+        <!--LevelUp-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-lvlup" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-lvlup">LevelUp</label>
+        <!--Tausch-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-trade" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-trade">Tausch</label>
+        <!--Bewegung-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-move" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-move">Bewwgung</label>
+        <!--Friendschip-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-friendship" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-friendship">Freundschfat</label>
+        <!--Item-->
+        <input type="checkbox" class="btn-check" id="btn-check-outlined-item" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btn-check-outlined-item">Item</label>
 
 
-                </div>
-                
-            </fieldset>
-             <!--Entwicklung-Item-->
-            <fieldset id="input_evo_item">
-                <legend>Entwicklungs-Item</legend>
-                Bei dieser Frage/Option wird das Item angezeigt welches benötigt wird dieses Pokemon zu werden.
-                <div class="form-check form-check-inline">
-                    <div class="form-check form-check-inline">
-                    </div>
-                </div>
-            </fieldset>
-            <!-- Form -->
-            <fieldset id="input_form">
-                <legend>Form</legend>
-                <!--Form Mega-->
-                <input type="checkbox" class="btn-check" id="btn-check-outlined-form_mega" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btn-check-outlined-form_mega">Mega</label>
-                <!--Form Aloa-->
-                <input type="checkbox" class="btn-check" id="btn-check-outlined-form_aloa" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btn-check-outlined-form_aloa">Aloa</label>
-                <!--Form Galar-->
-                <input type="checkbox" class="btn-check" id="btn-check-outlined-form_galar" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btn-check-outlined-form_galar">Galar</label>
-            </fieldset>
-        </div>
-        <button type="button" class="btn btn-success" id="start_filter">Filtern</button>
-        <div id="tableBody">
+      </div>
 
+    </fieldset>
+    <!--Entwicklung-Item-->
+    <fieldset id="input_evo_item">
+      <legend>Entwicklungs-Item</legend>
+      Bei dieser Frage/Option wird das Item angezeigt welches benötigt wird dieses Pokemon zu werden.
+      <div class="form-check form-check-inline">
+        <div class="form-check form-check-inline">
         </div>
-        </center>
-        <script src="pokemon.js"></script>
-        <script src="./filter_function.js" type="module"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-   
-    </body>
+      </div>
+    </fieldset>
+    <!-- Form -->
+    <fieldset id="input_form">
+      <legend>Form</legend>
+      <!--Form Mega-->
+      <input type="checkbox" class="btn-check" id="btn-check-outlined-form_mega" autocomplete="off" checked>
+      <label class="btn btn-outline-primary" for="btn-check-outlined-form_mega">Mega</label>
+      <!--Form Aloa-->
+      <input type="checkbox" class="btn-check" id="btn-check-outlined-form_aloa" autocomplete="off" checked>
+      <label class="btn btn-outline-primary" for="btn-check-outlined-form_aloa">Aloa</label>
+      <!--Form Galar-->
+      <input type="checkbox" class="btn-check" id="btn-check-outlined-form_galar" autocomplete="off" checked>
+      <label class="btn btn-outline-primary" for="btn-check-outlined-form_galar">Galar</label>
+    </fieldset>
+  </div>
+  <button type="button" class="btn btn-success" id="start_filter">Filtern</button>
+  <div id="tableBody">
+
+  </div>
+</center>
+<!--<script src="pokemonlist.js"></script>-->
+<script src="./filter.js" type="module"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
 </html>
