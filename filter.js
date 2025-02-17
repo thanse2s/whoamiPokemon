@@ -214,6 +214,44 @@ function showUpList(showdList){
 
 }
 
+function shopPlayerPoke(player){
+    let p1_pk_id = document.getElementById("player1_poke_id").value;
+    let p2_pk_id = document.getElementById("player2_poke_id").value;
+    let getPokemon;
+
+    if(player=="player1")
+        getPokemon = pokemonList.filter(poke => poke.ID =p1_pk_id)
+    if(player=="player2")
+        getPokemon = pokemonList.filter(poke => poke.ID =p2_pk_id)
+
+
+    let tableHTML = `<table class="table table-dark"><tr>`
+
+    Object.keys(getPokemon[0]).forEach(key=>{
+        tableHTML += `<th>${key}</th>`
+    });
+
+    tableHTML += `</tr>`
+
+    getPokemon.forEach(item=>{
+        tableHTML += `<tr>`
+        Object.values(item).forEach(value=>{
+            tableHTML += `<td>${value}</td>`
+        })
+        tableHTML += `</tr>`
+    })
+    tableHTML += `</table>`
+
+    if(player=="player1")
+        document.getElementById("player1_poke_id").innerHTML=tableHTML;
+    if(player=="player2")
+        document.getElementById("player1_poke_id").innerHTML=tableHTML;
+
+    
+}
+
 
 document.getElementById("start_filter").onclick = function(){filterList()};
+document.getElementById("player1_poke_id").onchange = function(){shopPlayerPoke("player1")};
+document.getElementById("player2_poke_id").onchange = function(){shopPlayerPoke("player2")}
 showUpList(pokemonList)
