@@ -28,23 +28,23 @@ let tableBody = document.getElementById("tableBody");
 function collectData(){
 
     fire = document.getElementById("btn-check-outlined-fire").checked;
-    wather = document.getElementById("btn-checkbox-outlined-wather").checked;
-    leaf = document.getElementById("btn-checkbox-outlined-leaf").checked;
-    bug = document.getElementById("btn-checkbox-outlined-bug").checked;
-    dark = document.getElementById("btn-checkbox-outlined-dark").checked;
-    dragon = document.getElementById("btn-checkbox-outlined-dragon").checked;
-    electric = document.getElementById("btn-checkbox-outlined-electric").checked;
-    fariy = document.getElementById("btn-checkbox-outlined-fariy").checked;
-    fight = document.getElementById("btn-checkbox-outlined-fighting").checked;
-    flyign = document.getElementById("btn-checkbox-outlined-flying").checked;
-    ghost = document.getElementById("btn-checkbox-outlined-ghost").checked;
-    ground = document.getElementById("btn-checkbox-outlined-ground").checked;
-    ice = document.getElementById("btn-checkbox-outlined-ice").checked;
-    normal = document.getElementById("btn-checkbox-outlined-normal").checked;
-    poison = document.getElementById("btn-checkbox-outlined-poison").checked;
-    psycho = document.getElementById("btn-checkbox-outlined-psychic").checked;
-    rock = document.getElementById("btn-checkbox-outlined-rock").checked;
-    steel = document.getElementById("btn-checkbox-outlined-steel").checked;
+    wather = document.getElementById("btn-check-outlined-wather").checked;
+    leaf = document.getElementById("btn-check-outlined-leaf").checked;
+    bug = document.getElementById("btn-check-outlined-bug").checked;
+    dark = document.getElementById("btn-check-outlined-dark").checked;
+    dragon = document.getElementById("btn-check-outlined-dragon").checked;
+    electric = document.getElementById("btn-check-outlined-electric").checked;
+    fariy = document.getElementById("btn-check-outlined-fariy").checked;
+    fight = document.getElementById("btn-check-outlined-fighting").checked;
+    flyign = document.getElementById("btn-check-outlined-flying").checked;
+    ghost = document.getElementById("btn-check-outlined-ghost").checked;
+    ground = document.getElementById("btn-check-outlined-ground").checked;
+    ice = document.getElementById("btn-check-outlined-ice").checked;
+    normal = document.getElementById("btn-check-outlined-normal").checked;
+    poison = document.getElementById("btn-check-outlined-poison").checked;
+    psycho = document.getElementById("btn-check-outlined-psychic").checked;
+    rock = document.getElementById("btn-check-outlined-rock").checked;
+    steel = document.getElementById("btn-check-outlined-steel").checked;
 
 
 
