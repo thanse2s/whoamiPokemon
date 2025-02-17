@@ -20,9 +20,9 @@ document.getElementById("min-weight").value = minWeight;
 document.getElementById("min-height").value = minSize;
 
 //Disaple FormBUttons
-document.getElementById("btn-check-outlined-form_mega").disable;
-document.getElementById("btn-check-outlined-form_aloa").disable;
-document.getElementById("btn-check-outlined-form_galar").disable;
+document.getElementById("btn-check-outlined-form_mega").disable = true;
+document.getElementById("btn-check-outlined-form_aloa").disable = true;
+document.getElementById("btn-check-outlined-form_galar").disable = true;
 
 
 
