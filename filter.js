@@ -34,7 +34,7 @@ function collectData(){
     dark = document.getElementById("btn-check-outlined-dark").checked;
     dragon = document.getElementById("btn-check-outlined-dargon").checked;
     electric = document.getElementById("btn-check-outlined-electric").checked;
-    fariy = document.getElementById("btn-check-outlined-fariy").checked;
+    fariy = document.getElementById("btn-check-outlined-fairy").checked;
     fight = document.getElementById("btn-check-outlined-fighting").checked;
     flyign = document.getElementById("btn-check-outlined-flying").checked;
     ghost = document.getElementById("btn-check-outlined-ghost").checked;
