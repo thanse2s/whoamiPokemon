@@ -243,9 +243,9 @@ function shopPlayerPoke(player){
     tableHTML += `</table>`
 
     if(player=="player1")
-        document.getElementById("player1_poke_id").innerHTML=tableHTML;
+        document.getElementById("player1_poke").innerHTML=tableHTML;
     if(player=="player2")
-        document.getElementById("player1_poke_id").innerHTML=tableHTML;
+        document.getElementById("player2_poke").innerHTML=tableHTML;
 
     
 }
