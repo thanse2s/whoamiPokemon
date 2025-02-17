@@ -214,7 +214,7 @@ function showUpList(showdList){
 
 }
 
-function shopPlayerPoke(player){
+function showPlayerPoke(player){
     let p1_pk_id = document.getElementById("player1_poke_id").value;
     let p2_pk_id = document.getElementById("player2_poke_id").value;
     let getPokemon;
@@ -251,8 +251,8 @@ function shopPlayerPoke(player){
 }
 
 function start_game(){
-    shopPlayerPoke("player1")
-    shopPlayerPoke("player2")
+    showPlayerPoke("player1")
+    showPlayerPoke("player2")
 }
 
 
