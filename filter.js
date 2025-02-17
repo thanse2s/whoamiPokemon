@@ -61,6 +61,13 @@ function collectData(){
     move = document.getElementById("btn-check-outlined-move").checked;
     friendship = document.getElementById("btn-check-outlined-friendship").checked;
     item = document.getElementById("btn-check-outlined-item").checked;
+    //Size
+    maxSize_value = document.getElementById("max-height").value;
+    minSize_value = document.getElementById("min-height").value;
+    //Weight
+    maxWeight_value = document.getElementById("max-weight").value;
+    minWeight_value = document.getElementById("min-weight").value;
+
 
 }
 
@@ -148,8 +155,19 @@ function checkEvoTyp(pokemon){
 
 }
 function checkEvoItem(pokemon){}
-function checkSize(pokemon){}
-function checkWight(pokemon){}
+function checkSize(pokemon){
+
+    if(minSize_value <= pokemon.Hight <= maxSize_value)
+        return true;
+    return false;
+
+}
+function checkWight(pokemon){
+
+    if(minWeight_value <= pokemon.Gewicht <= maxSize_value)
+        return true;
+    return false;
+}
 
 function filterList(){
 
