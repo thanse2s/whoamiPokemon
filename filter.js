@@ -122,7 +122,7 @@ function checkEvo(pokemon){
 }
 function checkForm(pokemon){}
 function checkEvoTyp(pokemon){
-    if(!levelUp && pokemon.Evo_Typ=="LevelUp");
+    if(!levelUp && pokemon.Evo_Typ=="LevelUp")
         return false;
     if(!trade && pokemon.Evo_Typ=="trade")
         return false;
