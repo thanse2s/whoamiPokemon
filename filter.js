@@ -122,7 +122,18 @@ function checkEvo(pokemon){
 }
 function checkForm(pokemon){}
 function checkEvoTyp(pokemon){
+    if(!levelUp && pokemon.Evo_Typ=="LevelUp");
+        return false;
+    if(!trade && pokemon.Evo_Typ=="trade")
+        return false;
+    if(!move && pokemon.Evo_Typ=="levelMove")
+        return false;
+    if(!friendship && pokemon.Evo_Typ=="levelFriendship")
+        return false;
+    if(!item && pokemon.Evo_Typ=="useItem")
+        return false;
 
+    return true;
 
 
 
@@ -139,6 +150,7 @@ function filterList(){
     let filterdList = pokemonList.filter(checkGen);
     filterdList  = filterdList.filter(checkEvo)
     filterdList  = filterdList.filter(checkTyp)
+    filterdList  = filterdList.filter(checkEvoTyp)
   
 
 
