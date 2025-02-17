@@ -25,12 +25,17 @@ document.getElementById("min-height").value = minSize;
 let filterdList = []
 let tableBody = document.getElementById("tableBody");
 
-function collectData(){}
+function collectData(){
+
+    fire = document.getElementById("btn-check-outlined-fire").checked;
+    console.log(fire)
+
+}
 
 
 function filterList(){
 
-
+    collectData();
 
 
 
