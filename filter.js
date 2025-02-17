@@ -125,6 +125,7 @@ function filterList(){
     collectData();
     let filterdList = pokemonList.filter(checkGen);
     filterdList  = filterdList.filter(checkEvo)
+    filterdList  = filterdList.filter(checkTyp)
   
 
 
