@@ -21,7 +21,7 @@ document.getElementById("min-height").value = minSize;
 
 
 
-let filterList = [...pokemonList];
+
 let filterdList = []
 let tableBody = document.getElementById("tableBody");
 
@@ -68,4 +68,4 @@ function showUpList(showdList){
     tableBody.innerHTML=tableHTML
 
 }
-showUpList(filterList)
+showUpList(pokemonList)
