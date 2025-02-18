@@ -3,11 +3,28 @@ const types = ['fire','water','leaf','bug','dark','dragon','electric','fariy','f
 
 function createTypeFilter(){
 
+    let filterHTML = `<div class="container text-center">`
+    types.forEach(type => {
+        filterHTML += `<!--${type}-->`
+        filterHTML += `<div class="row">`
+        filterHTML += `<div class="col">`
+        filterHTML += `${type}`
+        filterHTML += `</div>`
+        filterHTML += `<div class="col">`
+        filterHTML += `<div class="btn-group" role="group">`
+        filterHTML += `<input type="radio" class="btn-check" name="${type}-radio" id="${type}-false" autocomplete="off">`
+        filterHTML += `<label class="btn btn-outline-danger" for="${type}-false"> X </label>`
+        filterHTML += `<input type="radio" class="btn-check" name="${type}-radio" id="${type}-neutral" autocomplete="off" checked>`
+        filterHTML += `<label class="btn btn-outline-secondary" for="${type}-neutral">-</label>`
+        filterHTML += `<input type="radio" class="btn-check" name="${type}-radio" id="${type}-true" autocomplete="off">`
+        filterHTML += `<label class="btn btn-outline-success" for="${type}-true">Y</label>`
+        filterHTML += `</div>`
+        filterHTML += `</div>`
+    })
+    filterHTML += `</div>`
 
 
-
-
-    document.getElementById("type-panel-body").innerHTML = `<h1>TESTING</h1>`;
+    document.getElementById("type-panel-body").innerHTML =filterHTML;
 }
 
 
