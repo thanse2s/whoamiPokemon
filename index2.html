@@ -27,6 +27,7 @@
             <br>        *Es werden alle Pokemon bis zu dieser Generation Gelistet
         </section>
         <div class="row justify-content-md-center">
+            <!-- Filter -->
             <div class="col-xl-2" id="sidebar-filter">
                 <h3> Filter </h3>
                 <button type="button" class="btn btn-success" id="start_filter">Filtern</button>
@@ -40,6 +41,17 @@
                         </h4>
                         <div id="type-panel" class="accordion-collapse collapse">
                             <div class="accordion-body">
+                                <!--Fire-->
+                                Fire:
+                                <div class="btn-group" role="group">
+                                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="vbtn-radio1">X</label>
+                                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off" checked>
+                                    <label class="btn btn-outline-warning" for="vbtn-radio2">-</label>
+                                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+                                    <label class="btn btn-outline-danger" for="vbtn-radio3">Y</label>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -117,6 +129,7 @@
                     </div>
                 </div>
             </div>
+            <!-- MainContent -->
             <div class="col-xl-9" id="main-content">
                 <div class="accordion" id="accordionTable">
                     <!--FilterTable-->
