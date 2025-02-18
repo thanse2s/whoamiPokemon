@@ -8,7 +8,7 @@ function createTypeFilter(){
         filterHTML += `<!--${type}-->`
         filterHTML += `<div class="row">`
             filterHTML += `<div class="col">`
-                filterHTML += `${type}`
+                filterHTML += `${type}:`
             filterHTML += `</div>`
         filterHTML += `<div class="col">`
             filterHTML += `<div class="btn-group" role="group">`
