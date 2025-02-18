@@ -13,7 +13,7 @@
         </div>
         <section>
             Gespielte Generation*:
-            <select id="select_gen">
+            <select id="select_gen" class="form-select" aria-label="Large select example">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -29,6 +29,7 @@
         <div class="row justify-content-md-center">
             <div class="col-xl-2" id="sidebar-filter">
                 <h3> Filter </h3>
+                <button type="button" class="btn btn-success" id="start_filter">Filtern</button>
                 <div class="accordion" id="accordionFilter">
                     <!--Typ-->
                     <div class="accordion-item">
@@ -99,14 +100,51 @@
                         </h4>
                         <div id="gen-panel" class="accordion-collapse collapse">
                             <div class="accordion-body">
+                                <select id="filter_gen" class="form-select" aria-label="Large select example">
+                                    <option>-</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-9" id="main-content">
-                    Main Test
+                <div class="accordion" id="accordionTable">
+                    <!--FilterTable-->
+                    <div class="accordion-item">
+                        <h4 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#filter_liste-panel" aria-expanded="false" aria-controls="filter_liste-panel">
+                                Gefilterte Liste
+                            </button>
+                        </h4>
+                        <div id="filter_liste-panel" class="accordion-collapse collapse">
+                            <div class="accordion-body" id="filter-liste">
+                            </div>
+                        </div>
+                    </div>
+                    <!--Hohle Table-->
+                    <div class="accordion-item">
+                        <h4 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#full_liste-panel" aria-expanded="false" aria-controls="full_liste-panel">
+                                Ganze Liste
+                            </button>
+                        </h4>
+                        <div id="full_liste-panel" class="accordion-collapse collapse">
+                            <div class="accordion-body" id="full-liste">
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
             </div>
         </div>
     </div>
