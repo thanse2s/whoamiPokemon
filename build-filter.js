@@ -19,8 +19,8 @@ function createTypeFilter(){
                 filterHTML += `<input type="radio" class="btn-check" name="${type}-radio" id="${type}-true" autocomplete="off">`
                 filterHTML += `<label class="btn btn-outline-success" for="${type}-true"> &#10003; </label>`
             filterHTML += `</div>`
-        filterHTML += `</div>`
-    })
+        filterHTML += `</div> <br>`
+    });
     filterHTML += `</div>`
 
 
