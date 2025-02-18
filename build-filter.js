@@ -7,7 +7,7 @@ function createTypeFilter(){
 
 
 
-    document.getElementById("type-panel-body").innerHTML = "TESTING";
+    document.getElementById("type-panel-body").innerHTML = `<h1>TESTING</h1>`;
 }
 
 
