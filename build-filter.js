@@ -58,6 +58,22 @@ document.addEventListener("DOMContentLoaded", function () {
         accordion_body.innerHTML = accordionHTML;
     }
 
+    function createGenInput(container,title){
+        let filterHTML = `<select class="form-select" aria-label="Default select example">`
+        filterHTML +=   `<option selected>-</option>`
+        filterHTML +=   `<option>1</option>`
+        filterHTML +=   `<option>2</option>`
+        filterHTML +=   `<option>3</option>`
+        filterHTML +=   `<option>4</option>`
+        filterHTML +=   `<option>5</option>`
+        filterHTML +=   `<option>6</option>`
+        filterHTML +=   `<option>7</option>`
+        filterHTML +=   `<option>8</option>`
+        filterHTML +=   `<option>9</option>`
+        container.innerHTML=filterHTML;
+
+    }
+
     async function buildFilter() {
         createAccordion();
 
@@ -66,12 +82,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const evo_types_filter_body = document.getElementById("evotype-panel-body");
         const size_filter_body=document.getElementById("size-panel-body")
         const weight_filter_body=document.getElementById("weight-panel-body")
+        const gen_filter_body=document.getElementById("gen-panel-body")
 
         createFilterSection(types, types_filter_body, "Types");
         createFilterSection(evos, evos_filter_body, "Evolutions");
         createFilterSection(evp_types, evo_types_filter_body,"Evolutions Type");
         createNumInput(num,"size",size_filter_body,"Size")
         createNumInput(num,"weight",weight_filter_body,"Weight")
+        createGenInput(gen_filter_body,"Generation")
+
     }
 
     buildFilter();
