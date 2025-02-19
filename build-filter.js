@@ -2,10 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const types = ['fire','water','leaf','bug','dark','dragon','electric','fairy','fight','flying','ghost','ground','ice','normal','poison','psycho','rock','steel'];
     const evp_types = ['levelup','trade','move','friendship','item'];
     const evos = ['pre_evo','post_evo'];
+    const num = ['min','max'];
     const accordion_items = ['types','size','weight','evo','evotype','gen'];
-
-
-
 
     function createFilterSection(items, container, title) {
         let filterHTML = `<div class="container">`;
@@ -27,6 +25,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         filterHTML += `</div>`;
         container.innerHTML = filterHTML;
+    }
+
+    function createNumInput(items,filter,container,title){
+        let filterHTML = `<form class="form-floating">`;
+        num.forEach(item=>{
+            filterHTML += `<!--${title}-->`;
+            filterHTML += `  <span class="input-group-text" id="${filter}-${item}">${item}</span>`;
+            filterHTML += `  <input type="number" step="0.1" class="form-control" placeholder=0.0 aria-label="${item}" aria-describedby="${filter}-${item}">`;
+                });
+        filterHTML += `</div>`;
+        container.innerHTML=filterHTML;
+
     }
 
     function createAccordion() {
@@ -54,10 +64,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const types_filter_body = document.getElementById("types-panel-body");
         const evos_filter_body = document.getElementById("evo-panel-body");
         const evo_types_filter_body = document.getElementById("evotype-panel-body");
+        const size_filter_body=document.getElementById("size-panel-body")
+        const weight_filter_body=document.getElementById("weight-panel-body")
 
         createFilterSection(types, types_filter_body, "Types");
         createFilterSection(evos, evos_filter_body, "Evolutions");
-        createFilterSection(evp_types, evo_types_filter_body, "Evolution Types");
+        createFilterSection(evp_types, evo_types_filter_body,"Evolutions Type");
+        createNumInput(num,"size",size_filter_body,"Size")
+        createNumInput(num,"weight",weight_filter_body,"Weight")
     }
 
     buildFilter();
