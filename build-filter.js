@@ -30,7 +30,7 @@ function createTypeFilter(){
         filterHTML += `</div>`
     });
     filterHTML += `</div>`;
-    types_filter_body.innerHTML =filterHTML;
+    types_filter_body.innerHTML = filterHTML;
 }
 function createEvoFilter(){
 
@@ -108,7 +108,7 @@ function craete_accordion(){
 
 
 craete_accordion()
-createTypeFilter()
-createEvoFilter()
-createEvpTypesFilter()
+await createTypeFilter()
+await createEvoFilter()
+await createEvpTypesFilter()
 
