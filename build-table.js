@@ -27,3 +27,13 @@ function createFullList(){
 }
 
 createFullList()
+
+function filterType(){}
+function filterGen(){}
+function filterEvo(){}
+function filterEvoType(){}
+function filterSize(){}
+function filterWeight(){}
+function getData(){}
+function start_filter(){}
+
