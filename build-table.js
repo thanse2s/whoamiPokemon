@@ -140,7 +140,7 @@ function filterType(pokemon){
         return true;
     }
     else{
-        if(type1_state=="true" && type2=="")
+        if(type1_state=="true")
             return true;
         if(type1_state=="false")
             return false
@@ -162,8 +162,6 @@ function setTypCheckboxValue(){
 
 
 function checkSelectetState(){
-
-
 
     if (numOfCheckTyps>0) {
         if (numTyps == "1")
