@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const types = ['fire','water','leaf','bug','dark','dragon','electric','fairy','fight','flying','ghost','ground','ice','normal','poison','psycho','rock','steel'];
+    const types = ['fire','water','grass','bug','dark','dragon','electric','fairy','fighting','flying','ghost','ground','ice','normal','poison','psychic','rock','steel'];
     const evp_types = ['levelup','trade','move','friendship','item'];
     const evos = ['pre_evo','post_evo'];
     const num = ['min','max'];
-    const accordion_items = ['types','size','weight','evo','evotype','gen'];
+    const accordion_items = ['numtypes','types','size','weight','evo','evotype','gen'];
 
     function createFilterSection(items, container, title) {
         let filterHTML = `<div class="container">`;
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function createGenInput(container,title){
-        let filterHTML = `<select class="form-select" aria-label="Default select example">`
+        let filterHTML = `<select class="form-select" aria-label="Default select example" id="genFilter">`
         filterHTML +=   `<option selected>-</option>`
         filterHTML +=   `<option>1</option>`
         filterHTML +=   `<option>2</option>`
@@ -74,9 +74,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+    function createnumtypeInput(container,title){
+        let filterHTML = `<select class="form-select" aria-label="Default select example" id="numTypsFilter">`
+        filterHTML +=   `<option selected>-</option>`
+        filterHTML +=   `<option>1</option>`
+        filterHTML +=   `<option>2</option>`
+        container.innerHTML=filterHTML;
+
+    }
+
     async function buildFilter() {
         createAccordion();
 
+        const numtypes_filter_body = document.getElementById("numtypes-panel-body");
         const types_filter_body = document.getElementById("types-panel-body");
         const evos_filter_body = document.getElementById("evo-panel-body");
         const evo_types_filter_body = document.getElementById("evotype-panel-body");
@@ -84,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const weight_filter_body=document.getElementById("weight-panel-body")
         const gen_filter_body=document.getElementById("gen-panel-body")
 
+        createnumtypeInput(numtypes_filter_body,"Num Types");
         createFilterSection(types, types_filter_body, "Types");
         createFilterSection(evos, evos_filter_body, "Evolutions");
         createFilterSection(evp_types, evo_types_filter_body,"Evolutions Type");
