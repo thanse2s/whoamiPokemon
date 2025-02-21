@@ -8,6 +8,7 @@ function createCard(poke){
     html += `<div class="card-body">`;
     html += `<h5 class="card-title">#${poke.ID} ${poke.Name_DE}</h5>`
     html += `<p>en_Name: ${poke.Name}</p>`
+    html += `<p>Icon: ${poke.icon}</p>`
     html += `</div>`
     html += `<ul class="list-group list-group-flush">`
     html +=  `<li class = "list-group-item" >Type1: ${poke.Type1}</li>`
