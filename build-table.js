@@ -67,7 +67,6 @@ function createFilteredlList(){
 
 }
 
-
 createFullList()
 
 function getData(){
@@ -201,7 +200,58 @@ function filterGen(pokemon){
 
 
 }
-function filterEvo(){}
+function filterEvo(pokemon){
+
+    if(variable_evo['pre_evo']!="neutral"&&variable_evo['post_evo']!="neutral")
+    {
+        if(variable_evo['pre_evo']=="false" && variable_evo['post_evo']=="false"){
+                if(pokemon.Pre_Evo == "" && pokemon.Post_Evo == "")
+                    return true;
+            return false;
+        }
+        if(variable_evo['pre_evo']=="true" && variable_evo['post_evo']=="true"){
+            if(pokemon.Pre_Evo != "" && pokemon.Post_Evo != "")
+                return true;
+            return false;
+        }
+        if(variable_evo['pre_evo']=="false" && variable_evo['post_evo']=="true"){
+            if(pokemon.Pre_Evo == "" && pokemon.Post_Evo != "")
+                return true;
+            return false;
+        }
+        if(variable_evo['pre_evo']=="true" && variable_evo['post_evo']=="false"){
+            if(pokemon.Pre_Evo != "" && pokemon.Post_Evo == "")
+                return true;
+            return false;
+        }
+    }
+    else
+    {
+        if(variable_evo['pre_evo']=="false"){
+            console.log("Evo")
+            if(pokemon.Pre_Evo == "")
+                return true;
+            return false;
+        }
+        if(variable_evo['pre_evo']=="true"){
+            if(pokemon.Pre_Evo!="")
+                return true;
+            return false;
+        }
+        if(variable_evo['post_evo']=="false"){
+            if(pokemon.Post_Evo=="")
+                return true;
+            return false;
+        }
+        if(variable_evo['post_evo']=="true"){
+            if(pokemon.Post_Evo!="")
+                return true;
+            return false;
+        }
+    }
+
+    return true;
+}
 function filterEvoType(){}
 function filterSize(){}
 function filterWeight(){}
@@ -225,6 +275,7 @@ function start_filter(){
     filteredList = pokemonList.filter(filterAnzTyp)
     filteredList = filteredList.filter(filterType)
     filteredList = filteredList.filter(filterGen)
+    filteredList = filteredList.filter(filterEvo)
     checkSelectetState();
     createFilteredlList();
 
