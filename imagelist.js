@@ -19438,7 +19438,4 @@ export const imagelist=[{
         Post_Evo: "",
         Evo_Typ: "LevelUp"
     },
-    {
-        ID: ""
-    }
 ]
