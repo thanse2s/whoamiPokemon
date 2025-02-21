@@ -140,8 +140,13 @@ function filterType(pokemon){
     }
     else{
         let numofChecks = countCheckTypes();
-        if(numofChecks>0) {
+        if(numofChecks==1) {
             if (type1_state == "true" || type2_state == "true")
+                return true;
+            return false;
+        }
+        else if(numofChecks==2) {
+            if (type1_state == "true" && type2_state == "true")
                 return true;
             return false;
         }
@@ -183,9 +188,16 @@ function countCheckTypes(){
 
 }
 
-function filterGen(){
+function filterGen(pokemon){
 
-
+    if(filter_gen=="-") {
+       return true;
+    }
+    else{
+        if(pokemon.Generation==filter_gen)
+            return true
+        return false;
+    }
 
 
 }
@@ -212,6 +224,7 @@ function start_filter(){
     getData();
     filteredList = pokemonList.filter(filterAnzTyp)
     filteredList = filteredList.filter(filterType)
+    filteredList = filteredList.filter(filterGen)
     checkSelectetState();
     createFilteredlList();
 
