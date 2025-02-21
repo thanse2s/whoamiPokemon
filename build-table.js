@@ -14,19 +14,20 @@ const evp_types = ['levelup','trade','move','friendship','item'];
 const evos = ['pre_evo','post_evo'];
 const num = ['min','max'];
 let filteredList=[]
+let gameList = []
 
 function createFullList(){
 
     let html=`<table class="table table-striped table-dark">`;
     html+=`<thead>`;
     html+=`<tr>`;
-    Object.keys(pokemonList[0]).forEach((key) => {
+    Object.keys(gameList[0]).forEach((key) => {
        html+=`<th scope="col">${key}</th>`;
     });
     html+=`</tr>`;
     html+=`</thead>`;
     html+=`<tbody>`;
-    pokemonList.forEach((element) => {
+    gameList.forEach((element) => {
         html+=`<tr>`;
         Object.values(element).forEach((value) => {
             html+=`<td>${value}</td>`;
@@ -67,8 +68,6 @@ function createFilteredlList(){
 
 }
 
-createFullList()
-
 function getData(){
 
     /*Num of Types*/
@@ -102,13 +101,12 @@ function getData(){
     variable_evotype["friendship"] = state_return("friendship")
     variable_evotype["item"] = state_return("item")
     /*SIZE*/
-    size_min=document.getElementById("size-min").value;
-    size_max=document.getElementById("size-max").value;
+    size_min=document.getElementById("size-min-value").value;
+    size_max=document.getElementById("size-max-value").value;
     /*Weight*/
-    weight_min=document.getElementById("weight-min").value;
-    weight_max=document.getElementById("weight-max").value;
+    weight_min=document.getElementById("weight-min-value").value;
+    weight_max=document.getElementById("weight-max-value").value;
     /*Gen*/
-    game_gen=document.getElementById("select_gen").value
     filter_gen=document.getElementById("genFilter").value
 }
 
@@ -165,12 +163,14 @@ function setTypCheckboxValue(){
     });
 }
 
-
+function setPossibleTypes(){}
 function checkSelectetState(){
 
     if (countCheckTypes()>0) {
         if (numTyps == "1")
             setTypCheckboxValue();
+        else
+            setPossibleTypes();
     }
 
 }
@@ -252,9 +252,69 @@ function filterEvo(pokemon){
 
     return true;
 }
-function filterEvoType(){}
-function filterSize(){}
-function filterWeight(){}
+
+function checkEvoTypeState(){
+    let count=0;
+
+    Object.keys(variable_evotype).forEach((key)=>{
+        if(variable_evotype[key]=="true")
+            count++;
+    });
+
+    if(count>0) {
+        Object.keys(variable_evotype).forEach((key) => {
+            if (variable_evotype[key] != "true")
+                document.getElementById(`${key}-false`).checked = true;
+        });
+    }
+
+    return count;
+
+}
+function filterEvoType(pokemon){
+
+   checkEvoTypeState();
+
+    let evoTyp = pokemon.Evo_Typ.toLowerCase();
+    let evoTyp_state=variable_evotype[evoTyp];
+
+    if(checkEvoTypeState()>0){
+        if(evoTyp_state!=undefined) {
+            if (evoTyp_state == "true")
+                return true
+        }
+
+        return false;
+    }
+    return true;
+}
+function filterSize(pokemon){
+
+    if(size_max=="")
+        size_max = Math.max(...pokemonList.map(poke => poke.Hight))
+    if(size_min=="")
+        size_min = Math.min(...pokemonList.map(poke => poke.Hight))
+
+    if(size_min<=pokemon.Hight && pokemon.Hight<=size_max)
+        return true
+    return false
+
+
+}
+function filterWeight(pokemon){
+
+    if(weight_max=="")
+        weight_max = Math.max(...pokemonList.map(poke => poke.Gewicht))
+    if(weight_min=="")
+        weight_min = Math.min(...pokemonList.map(poke => poke.Gewicht))
+
+    if(weight_min<=pokemon.Gewicht && pokemon.Gewicht<=weight_max)
+        return true
+    return false
+
+
+
+}
 function filterAnzTyp(pokemon){
 
     if(numTyps=="-")
@@ -268,20 +328,96 @@ function filterAnzTyp(pokemon){
 
 }
 
-function start_filter(){
-
-
-    getData();
-    filteredList = pokemonList.filter(filterAnzTyp)
-    filteredList = filteredList.filter(filterType)
-    filteredList = filteredList.filter(filterGen)
-    filteredList = filteredList.filter(filterEvo)
-    checkSelectetState();
-    createFilteredlList();
+function printLeftResult(){
 
 
 
 }
 
+function getPlayerPokemon(player){
+    let p1_pk_id = document.getElementById("player1_poke_id").value;
+    let p2_pk_id = document.getElementById("player2_poke_id").value;
+    let getPokemon;
+
+    if(player=="player1")
+        getPokemon = gameList.filter(poke => poke.ID == p1_pk_id)
+    if(player=="player2")
+        getPokemon = gameList.filter(poke => poke.ID == p2_pk_id)
+
+
+
+
+    if(getPokemon.length>0){
+        let tableHTML = `<table class="table table-dark"><tr>`
+
+        Object.keys(getPokemon[0]).forEach(key=>{
+            tableHTML += `<th>${key}</th>`
+        });
+
+        tableHTML += `</tr>`
+
+        getPokemon.forEach(item=>{
+            tableHTML += `<tr>`
+            Object.values(item).forEach(value=>{
+                tableHTML += `<td>${value}</td>`
+            })
+            tableHTML += `</tr>`
+        })
+        tableHTML += `</table>`
+
+            if (player == "player1")
+                document.getElementById("player1_poke").innerHTML = tableHTML;
+            if (player == "player2")
+                document.getElementById("player2_poke").innerHTML = tableHTML;
+    }else{
+        if (player == "player1")
+            document.getElementById("player1_poke").innerHTML = "Pokemon ist nicht in der Angegebenen Spiel Generation";
+        if (player == "player2")
+            document.getElementById("player2_poke").innerHTML = "Pokemon ist nicht in der Angegebenen Spiel Generation";
+
+        alert("Ein Pokemon Entspricht nicht der Angegeben Generation")
+    }
+
+}
+function start_filter(){
+
+
+    getData();
+    filteredList = gameList.filter(filterAnzTyp);
+    filteredList = filteredList.filter(filterType);
+    filteredList = filteredList.filter(filterGen);
+    filteredList = filteredList.filter(filterEvo);
+    filteredList = filteredList.filter(filterSize);
+    filteredList = filteredList.filter(filterWeight);
+    filteredList = filteredList.filter(filterEvoType);
+    checkSelectetState();
+    createFilteredlList();
+    printLeftResult();
+
+
+
+}
+
+
+function start_game() {
+
+    /*Gen*/
+    game_gen=document.getElementById("select_gen").value
+
+
+    gameList = pokemonList.filter(pokemon=>{
+
+        if(pokemon.Generation<= game_gen)
+            return true
+        return false
+    }
+    )
+    createFullList()
+    getPlayerPokemon("player1");
+    getPlayerPokemon("player2");
+}
+
+
 document.getElementById("start_filter").onclick = function(){start_filter()};
+document.getElementById("start_game").onclick = function (){start_game()};
 

@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         num.forEach(item=>{
             filterHTML += `<!--${title}-->`;
             filterHTML += `  <span class="input-group-text" id="${filter}-${item}">${item}</span>`;
-            filterHTML += `  <input type="number" step="0.1" class="form-control" placeholder=0.0 aria-label="${item}" aria-describedby="${filter}-${item}">`;
+            filterHTML += `  <input id="${filter}-${item}-value" type="number" step="0.1"class="form-control" aria-label="${item}" aria-describedby="${filter}-${item}">`;
                 });
         filterHTML += `</div>`;
         container.innerHTML=filterHTML;
