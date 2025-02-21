@@ -283,7 +283,6 @@ function filterEvoType(pokemon){
             if (evoTyp_state == "true")
                 return true
         }
-
         return false;
     }
     return true;
