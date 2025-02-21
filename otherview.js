@@ -1,10 +1,10 @@
-import { pokemonList } from "./pokemonlist.js";
+import { imagelist } from "./imagelist.js";
 
 function createCard(poke){
 
     let html = ``
     html += `<div class="card" style="width: 18rem;" style="margin: 15px 15px 15px 15px">`;
-    html += `<img src="${poke.IMG}" class="card-img-top" alt="${poke.Name}-IMG">`;
+    html += `<img src="${poke.Ing}" class="card-img-top" alt="${poke.Name}-IMG">`;
     html += `<div class="card-body">`;
     html += `<h5 class="card-title">#${poke.ID} ${poke.Name_DE}</h5>`
     html += `<p>en_Name: ${poke.Name}</p>`
@@ -26,7 +26,7 @@ function buildView(){
 
     let html=`<div class="container text-center">`;
     let count=0;
-    pokemonList.forEach((poke)=>{
+    imagelist.forEach((poke)=>{
         if(count==0)
             html+=`<div class="row">`
             html += `<div class="col">`
