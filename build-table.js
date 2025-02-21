@@ -389,7 +389,7 @@ function start_filter(){
     filteredList = filteredList.filter(filterEvo);
     filteredList = filteredList.filter(filterSize);
     filteredList = filteredList.filter(filterWeight);
-    filteredList = filteredList.filter(filterEvoType);
+    //filteredList = filteredList.filter(filterEvoType);
     checkSelectetState();
     createFilteredlList();
     printLeftResult();
