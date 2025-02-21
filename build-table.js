@@ -1,4 +1,4 @@
-import { pokemonList } from "./pokemonlist.js";
+import { pokemonList } from "./pokemonList.js";
 
 
 let variable_type = {fire:"",water:"",grass:"",bug:"",dark:"",dragon:"",electric:"",fairy:"",fighting:"",flying:"",ghost:"",ground:"",ice:"",normal:"",poison:"",psychic:"",rock:"",steel:""};
