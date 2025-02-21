@@ -4,7 +4,7 @@ function createCard(poke){
 
     let html = ``
     html += `<div class="card" style="width: 18rem;" style="margin: 15px 15px 15px 15px">`;
-    html += `<img src"..." class="card-img-top" alt="..">`;
+    html += `<img src="${poke.IMG}" class="card-img-top" alt="${poke.Name}-IMG">`;
     html += `<div class="card-body">`;
     html += `<h5 class="card-title">#${poke.ID} ${poke.Name_DE}</h5>`
     html += `<p>en_Name: ${poke.Name}</p>`
