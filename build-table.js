@@ -7,7 +7,7 @@ let variable_evo = {pre_evo:"",post_evo:""};
 let size_min,size_max,weight_min,weight_max;
 let game_gen,filter_gen;
 let numTyps;
-let numOfCheckTyps=0;  //The Type is checked when is true;
+
 
 const types = ['fire','water','grass','bug','dark','dragon','electric','fairy','fighting','flying','ghost','ground','ice','normal','poison','psychic','rock','steel'];
 const evp_types = ['levelup','trade','move','friendship','item'];
@@ -133,23 +133,24 @@ function filterType(pokemon){
     let type1_state=variable_type[type1];
     let type2_state=variable_type[type2];
 
-    /*Num of Types */
-    if(numTyps=="-"||numTyps=="2"){
-        if(type1_state=="false"||type2_state=="false")
-            return false
+    if(numTyps=="1"){
+        if(type1_state == "false")
+            return false;
         return true;
     }
     else{
-        if(type1_state=="true")
+        let numofChecks = countCheckTypes();
+        if(numofChecks>0) {
+            if (type1_state == "true" || type2_state == "true")
+                return true;
+            return false;
+        }
+        else{
+            if(type1_state == "false" || type2_state == "false")
+                return false
             return true;
-        if(type1_state=="false")
-            return false
+        }
     }
-
-    console.log(`${pokemon.Name_DE} - (${type1}:${type1_state} | ${type2}:${type2_state})`)
-
-    return false;
-
 }
 
 /*This function will call when NumTyps==1 to set all neutralBoxes to false if they don't be false*/
@@ -163,10 +164,22 @@ function setTypCheckboxValue(){
 
 function checkSelectetState(){
 
-    if (numOfCheckTyps>0) {
+    if (countCheckTypes()>0) {
         if (numTyps == "1")
             setTypCheckboxValue();
     }
+
+}
+
+function countCheckTypes(){
+
+    let count=0;
+
+   Object.keys(variable_type).forEach((key)=>{
+        if(variable_type[key]=="true")
+            count++;
+   })
+     return count;
 
 }
 
@@ -180,11 +193,25 @@ function filterEvo(){}
 function filterEvoType(){}
 function filterSize(){}
 function filterWeight(){}
+function filterAnzTyp(pokemon){
+
+    if(numTyps=="-")
+        return true;
+    if(numTyps=="1" && pokemon.Type2=="")
+        return true;
+    if(numTyps=="2" && pokemon.Type2!="")
+        return true;
+
+    return false;
+
+}
+
 function start_filter(){
 
 
     getData();
-    filteredList = pokemonList.filter(filterType)
+    filteredList = pokemonList.filter(filterAnzTyp)
+    filteredList = filteredList.filter(filterType)
     checkSelectetState();
     createFilteredlList();
 
