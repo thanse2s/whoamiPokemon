@@ -15,6 +15,7 @@ function createCard(poke){
     html +=  `<li class = "list-group-item" >Pre-Evo: ${poke.Pre_Evo}</li>`
     html +=  `<li class = "list-group-item" >Post-Evo: ${poke.Post_Evo}</li>`
     html +=  `<li class = "list-group-item" >Evo-Type: ${poke.Evo_Typ}</li>`
+    html +=  `<li class = "list-group-item">Form: ${poke.Form}</li>`
     html += `</ul>`
     html += `</div>`
 
