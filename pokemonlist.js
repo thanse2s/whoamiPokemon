@@ -1,6 +1,5 @@
 export const pokemonList = [{
     ID: 1,
-    IMG:"https://media.bisafans.de/54bf46f/thumbs/300x300/pokemon/artwork/001.png",
     Name: 'Bulbasaur',
     Name_DE: 'Bisasam',
     Form: "",
